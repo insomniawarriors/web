@@ -83,44 +83,87 @@
 
         <div class="contact-form">
           <h3 style="margin-bottom:24px;">Send a Message</h3>
-          <form action="mailto:insomniawarriors@pm.me" method="post" enctype="text/plain">
+          <form id="contact-form" onsubmit="return sendMail()">
             <div class="form-row">
               <div class="form-group">
                 <label for="first-name">First Name</label>
-                <input type="text" id="first-name" name="first-name" required>
+                <input type="text" id="first-name" required>
               </div>
               <div class="form-group">
                 <label for="last-name">Last Name</label>
-                <input type="text" id="last-name" name="last-name" required>
+                <input type="text" id="last-name" required>
               </div>
             </div>
             <div class="form-group">
               <label for="email">Email</label>
-              <input type="email" id="email" name="email" required>
+              <input type="email" id="email" required>
             </div>
             <div class="form-group">
-              <label for="phone">Phone (optional)</label>
-              <input type="tel" id="phone" name="phone">
+              <label for="phone">Phone</label>
+              <input type="tel" id="phone" required>
             </div>
             <div class="form-group">
               <label for="concern">Primary Concern</label>
-              <select id="concern" name="concern">
+              <select id="concern">
                 <option value="">Select one...</option>
-                <option value="difficulty-falling-asleep">Difficulty falling asleep</option>
-                <option value="frequent-waking">Frequent nighttime waking</option>
-                <option value="early-waking">Waking too early</option>
-                <option value="anxiety-at-bedtime">Anxiety at bedtime</option>
-                <option value="daytime-fatigue">Daytime fatigue / fog</option>
-                <option value="medication-dependence">Sleep medication dependence</option>
-                <option value="other">Other</option>
+                <option value="Difficulty falling asleep">Difficulty falling asleep</option>
+                <option value="Frequent nighttime waking">Frequent nighttime waking</option>
+                <option value="Waking too early">Waking too early</option>
+                <option value="Anxiety at bedtime">Anxiety at bedtime</option>
+                <option value="Daytime fatigue / fog">Daytime fatigue / fog</option>
+                <option value="Sleep medication dependence">Sleep medication dependence</option>
+                <option value="Other">Other</option>
               </select>
             </div>
             <div class="form-group">
               <label for="message">Tell Us About Your Sleep</label>
-              <textarea id="message" name="message" placeholder="How long have you been experiencing sleep difficulties? What have you tried?"></textarea>
+              <textarea id="message" placeholder="How long have you been experiencing sleep difficulties? What have you tried?"></textarea>
             </div>
             <button type="submit" class="btn btn-primary" style="width:100%;justify-content:center;">Send Message</button>
           </form>
+          <script>
+            function sendMail() {
+              var firstName = document.getElementById('first-name').value.trim();
+              var lastName = document.getElementById('last-name').value.trim();
+              var email = document.getElementById('email').value.trim();
+              var phone = document.getElementById('phone').value.trim();
+              var concern = document.getElementById('concern').value;
+              var message = document.getElementById('message').value.trim();
+
+              var emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+              if (!emailPattern.test(email)) {
+                alert('Please enter a valid email address.');
+                document.getElementById('email').focus();
+                return false;
+              }
+
+              var phoneClean = phone.replace(/[\s\-\(\)\.]/g, '');
+              if (!/^\+?\d{10,15}$/.test(phoneClean)) {
+                alert('Please enter a valid phone number (10-15 digits).');
+                document.getElementById('phone').focus();
+                return false;
+              }
+
+              var subject = 'CBT-I Inquiry from ' + firstName + ' ' + lastName;
+
+              var body = 'Dear Tierza,\n\n';
+              if (concern) {
+                body += 'My concern is: ' + concern + '.\n\n';
+              }
+              if (message) {
+                body += message + '\n\n';
+              }
+              body += firstName + ' ' + lastName + '\n';
+              body += email + '\n';
+              body += phone;
+
+              window.location.href = 'mailto:insomniawarriors@pm.me'
+                + '?subject=' + encodeURIComponent(subject)
+                + '&body=' + encodeURIComponent(body);
+
+              return false;
+            }
+          </script>
         </div>
 
       </div>

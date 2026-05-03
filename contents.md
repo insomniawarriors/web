@@ -8,8 +8,8 @@
 
 - Home [Link: index.html]
 - The Program [Link: program.html]
-- Why CBT-I [Link: why-cbti.html]
-- Meet Tierza [Link: about.html]
+- Why OT driven CBT-I [Link: why-cbti.html]
+- Meet The Team [Link: about.html]
 - Testimonials [Link: testimonials.html]
 - FAQs [Link: faqs.html]
 - Get Started [Link: contact.html] (button)
@@ -323,6 +323,10 @@ A close coordination with medical providers will be critical if you are taking s
 ### Question: What if I have tried everything?
 
 We will discuss all the things you have tried in the past and determine which pieces were missing, or which things needed to be tried in parallel that were potentially missed.
+
+### Question: What if I don't qualify for the program?
+
+If someone doesn't qualify for the program the team can make general recommendations of sleep tips for you to try at home.
 
 ### Call to Action
 

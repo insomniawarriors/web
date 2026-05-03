@@ -6,8 +6,13 @@
 
 ## Header (appears on every page)
 
-- Navigation links: Home, The Program, Why CBT-I, Meet Tierza, Testimonials, FAQs
-- Navigation button: Get Started [Link: contact.html]
+- Home [Link: index.html]
+- The Program [Link: program.html]
+- Why CBT-I [Link: why-cbti.html]
+- Meet Tierza [Link: about.html]
+- Testimonials [Link: testimonials.html]
+- FAQs [Link: faqs.html]
+- Get Started [Link: contact.html] (button)
 
 ---
 
@@ -227,18 +232,21 @@
 ### Testimonial 1
 
 - Author: Andris
+- Image: images/testimonial-andris.jpg
 - Rating: 5 stars
 - Quote: "Tierza Clerc did a really good job teaching me how to deal with my insomnia. The therapy she provided worked. I am sleeping so much better now. She has an exceptionally good understanding of insomnia because she has experienced it herself."
 
 ### Testimonial 2
 
 - Author: J. M.
+- Image: images/testimonial-jm.png
 - Rating: 5 stars
-- Quote: "Tierza has been a life changer! She has been a thoughtful CBT-I therapist, walking me through the steps for collecting critical data that exposed needed improvements in my sleep habits and routines. Though her careful therapy, I was able to revise these habits and routines and build consistent sleep routines. The result is Tierza helped me break the repeating cycle of insomnia that I suffered for years! I'm consistently better rested with more energy and stamina to live and enjoy life."
+- Quote: "Tierza has been a life changer! She has been a thoughtful CBT-I therapist, walking me through the steps for collecting critical data that exposed needed improvements in my sleep habits and routines. Through her careful therapy, I was able to revise these habits and routines and build consistent sleep routines. The result is Tierza helped me break the repeating cycle of insomnia that I suffered for years! I'm consistently better rested with more energy and stamina to live and enjoy life."
 
 ### Testimonial 3
 
 - Author: John W.
+- Image: images/testimonial-johnw.png
 - Rating: 5 stars
 - Quote: "Tierza's therapy helped me solve my lifelong insomnia. Her approach was effective and her coaching was thoughtful and tailored to my specific needs. I recommend her very highly!"
 

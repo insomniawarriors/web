@@ -885,7 +885,7 @@ p:last-child { margin-bottom: 0; }
 .form-group select:focus {
   outline: none;
   border-color: var(--turquoise);
-  box-shadow: 0 0 0 3px rgba(214, 163, 75, 0.1);
+  box-shadow: 0 0 0 3px rgba(108, 237, 239, 0.15);
 }
 
 .form-group textarea { min-height: 120px; resize: vertical; }
@@ -1139,4 +1139,16 @@ p:last-child { margin-bottom: 0; }
   .testimonials-grid { grid-template-columns: 1fr; }
 
   .credentials-bar img { height: 32px; }
+}
+
+@media (max-width: 480px) {
+  h1 { font-size: 1.75rem; }
+  h2 { font-size: 1.35rem; }
+  .section { padding: 48px 0; }
+  .page-header { padding: 100px 0 40px; }
+  .hero { min-height: 70vh; }
+  .hero h1 { font-size: 2rem; }
+  .benefits-grid { grid-template-columns: 1fr; }
+  .comparison-table { font-size: 0.85rem; }
+  .btn { padding: 12px 24px; font-size: 0.9rem; }
 }

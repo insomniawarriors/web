@@ -1,6 +1,6 @@
 # Insomnia Warriors — Website Content
 
-> **How to use this file:** This is the single source of truth for all text on the website. Edit any text below and Madan will update the site to match. Don't worry about formatting or HTML — just change the words. Everything is organized by page, then by section.
+> **How to use this file:** This is the single source of truth for website text. Edit the words below; you do not need to know HTML or CSS. Everything is organized by page, then by section. After editing, run `python3 scripts/generate_site.py` to update the website files.
 
 ---
 

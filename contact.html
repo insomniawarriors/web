@@ -5,6 +5,11 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Contact — Insomnia Warriors</title>
   <meta name="description" content="Get started with CBT-I treatment. Contact Insomnia Warriors to schedule a consultation and take the first step toward better sleep.">
+  <meta property="og:title" content="Contact — Insomnia Warriors">
+  <meta property="og:description" content="Get started with CBT-I treatment. Contact Insomnia Warriors to schedule a consultation and take the first step toward better sleep.">
+  <meta property="og:image" content="https://insomniawarriors.github.io/web/images/logo.png">
+  <meta property="og:url" content="https://insomniawarriors.github.io/web/contact.html">
+  <meta property="og:type" content="website">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@500;700&family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
@@ -75,14 +80,14 @@
             </div>
           </div>
 
-          <div style="margin-top:36px;padding:24px;background:var(--turquoise-pale);border-left:4px solid var(--turquoise);">
-            <h4 style="margin-bottom:8px;font-size:0.95rem;">What to Expect</h4>
-            <p style="font-size:0.88rem;color:var(--dark-gray);margin:0;">After reaching out, we'll schedule an initial consultation to discuss your sleep history and determine if CBT-I is the right fit for you. There's no commitment required to have this conversation.</p>
+          <div class="info-callout">
+            <h4>What to Expect</h4>
+            <p>After reaching out, we'll schedule an initial consultation to discuss your sleep history and determine if CBT-I is the right fit for you. There's no commitment required to have this conversation.</p>
           </div>
         </div>
 
         <div class="contact-form">
-          <h3 style="margin-bottom:24px;">Send a Message</h3>
+          <h3>Send a Message</h3>
           <form id="contact-form" onsubmit="return sendMail()">
             <div class="form-row">
               <div class="form-group">
@@ -119,7 +124,7 @@
               <label for="message">Tell Us About Your Sleep</label>
               <textarea id="message" placeholder="How long have you been experiencing sleep difficulties? What have you tried?"></textarea>
             </div>
-            <button type="submit" class="btn btn-primary" style="width:100%;justify-content:center;">Send Message</button>
+            <button type="submit" class="btn btn-primary">Send Message</button>
           </form>
           <script>
             function sendMail() {

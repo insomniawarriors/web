@@ -138,17 +138,6 @@ p:last-child { margin-bottom: 0; }
   transform: translateY(-1px);
 }
 
-.btn-gold {
-  background: var(--turquoise-dark);
-  color: var(--white);
-  border-color: var(--turquoise);
-}
-.btn-gold:hover {
-  background: var(--gold-dark);
-  border-color: var(--gold-dark);
-  transform: translateY(-1px);
-}
-
 .btn-light {
   background: rgba(255,255,255,0.12);
   color: var(--white);
@@ -272,10 +261,6 @@ p:last-child { margin-bottom: 0; }
   padding-top: 80px;
 }
 
-.hero-bg-image {
-  display: none;
-}
-
 .hero-content {
   position: relative;
   z-index: 2;
@@ -286,6 +271,12 @@ p:last-child { margin-bottom: 0; }
 
 .hero h1 {
   color: var(--black);
+  margin-bottom: 20px;
+}
+
+.hero-subtitle {
+  color: var(--black);
+  font-weight: 500;
   margin-bottom: 20px;
 }
 
@@ -349,6 +340,13 @@ p:last-child { margin-bottom: 0; }
   color: var(--text-light);
   margin-top: 16px;
   font-size: 1.05rem;
+}
+
+.section-footnote {
+  color: var(--text-light);
+  max-width: 640px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 /* --- Who This Is For (Symptoms Grid) --- */
@@ -435,6 +433,12 @@ p:last-child { margin-bottom: 0; }
 
 .about-content h2 { margin-bottom: 20px; }
 .about-content p { color: var(--dark-gray); font-size: 0.98rem; }
+.about-content .subtitle { margin-bottom: 20px; }
+
+.cta-wrapper {
+  text-align: center;
+  margin-top: 20px;
+}
 
 /* --- Credentials bar --- */
 .credentials-bar {
@@ -484,7 +488,7 @@ p:last-child { margin-bottom: 0; }
 }
 
 .diff-card h4 { margin-bottom: 10px; }
-.diff-card p { font-size: 0.9rem; color: var(--text-light); }
+.diff-card p { font-size: 0.9rem; color: var(--dark-gray); }
 
 /* --- Program Steps --- */
 .steps {
@@ -712,6 +716,48 @@ p:last-child { margin-bottom: 0; }
   line-height: 1.8;
 }
 
+/* --- Philosophy / Prose Block --- */
+.prose-block {
+  max-width: 760px;
+  margin: 0 auto;
+}
+
+.prose-block p {
+  font-size: 1.05rem;
+  line-height: 1.8;
+  margin-bottom: 20px;
+}
+
+/* --- Social Proof --- */
+.social-proof {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  padding: 20px 32px;
+  background: var(--turquoise-pale);
+  border-left: 4px solid var(--turquoise);
+}
+
+.social-proof .strong {
+  color: var(--black);
+  font-size: 1.1rem;
+  display: block;
+}
+
+.social-proof span {
+  color: var(--text-light);
+  font-size: 0.88rem;
+}
+
+.privacy-note {
+  max-width: 600px;
+  margin: 24px auto 0;
+  text-align: center;
+  font-size: 0.8rem;
+  color: var(--light-gray);
+  font-style: italic;
+}
+
 /* --- Contact Section --- */
 .contact-grid {
   display: grid;
@@ -767,6 +813,33 @@ p:last-child { margin-bottom: 0; }
   padding: 40px;
   border: 1px solid var(--border);
   box-shadow: 0 4px 24px rgba(0,0,0,0.04);
+}
+
+.contact-form h3 {
+  margin-bottom: 24px;
+}
+
+.contact-form .btn {
+  width: 100%;
+  justify-content: center;
+}
+
+.info-callout {
+  margin-top: 36px;
+  padding: 24px;
+  background: var(--turquoise-pale);
+  border-left: 4px solid var(--turquoise);
+}
+
+.info-callout h4 {
+  margin-bottom: 8px;
+  font-size: 0.95rem;
+}
+
+.info-callout p {
+  font-size: 0.88rem;
+  color: var(--dark-gray);
+  margin: 0;
 }
 
 .form-group {
@@ -882,6 +955,11 @@ p:last-child { margin-bottom: 0; }
 .mt-4 { margin-top: 32px; }
 .mb-0 { margin-bottom: 0; }
 
+.section.note-section {
+  padding-top: 48px;
+  padding-bottom: 48px;
+}
+
 /* --- Page Header (inner pages) --- */
 .page-header {
   background: var(--turquoise);
@@ -973,6 +1051,7 @@ p:last-child { margin-bottom: 0; }
 }
 .callout h4 { margin-bottom: 12px; }
 .callout p { font-size: 0.93rem; color: var(--dark-gray); }
+.callout p:last-child { margin-bottom: 0; }
 
 /* ============================================================
    Responsive
@@ -1009,6 +1088,8 @@ p:last-child { margin-bottom: 0; }
 }
 
 @media (max-width: 768px) {
+  .logo-img { height: 50px; }
+
   .nav-links { display: none; }
   .nav-toggle { display: flex; }
 

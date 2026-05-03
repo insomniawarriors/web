@@ -985,7 +985,7 @@ p:last-child { margin-bottom: 0; }
 
   .stat-bar {
     grid-template-columns: 1fr;
-    margin-top: -32px;
+    margin-top: 0;
   }
 
   .stat-item:not(:last-child) {
@@ -1012,6 +1012,17 @@ p:last-child { margin-bottom: 0; }
   }
 
   .hero { min-height: 80vh; }
+
+  .hero-actions {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .hero-actions .btn {
+    width: 100%;
+    max-width: 300px;
+    justify-content: center;
+  }
 
   .form-row { grid-template-columns: 1fr; }
 

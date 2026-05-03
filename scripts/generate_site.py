@@ -489,7 +489,7 @@ def parse_friendly_markdown(raw: str) -> dict[str, Any]:
 
     # FAQs
     block = page("FAQs")
-    question_matches = re.findall(r"^### Question \d+: (.*?)\n\n(.*?)(?=^### Question \d+:|^### Call to Action|\Z)", block, re.S | re.M)
+    question_matches = re.findall(r"^### Question(?: \d+)?: (.*?)\n\n(.*?)(?=^### Question(?: \d+)?:|^### Call to Action|\Z)", block, re.S | re.M)
     data["pages"]["faqs"] = {
         "meta": META_DEFAULTS["faqs"],
         "page_header": page_header(block),

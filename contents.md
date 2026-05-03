@@ -274,47 +274,55 @@
 - Heading: FAQs
 - Subtitle: Your questions, answered
 
-### Question 1: What does a typical session look like?
+### Question: What does a typical session look like?
 
 Each session begins with a review of your sleep diary. This allows us to calculate your sleep efficiency. The remainder of the session focuses on determining if your sleep schedule needs to change, and addressing any other co-occurring conditions that need to be improved for sleep to thrive.
 
-### Question 2: How long does treatment take?
+### Question: How do I receive my sessions?
+
+All visits are Telehealth through a medically and HIPAA secure platform. 
+
+### Questions: How long are sessions?
+
+Sessions are typically 60 minutes in length. Towards the end of the program, it may be possible to have visits as short as 15-20 minutes.
+
+### Question: What is the cost?
+
+Prices are $80 for 10-30 minute sessions and $150 for 31-60 minute sessions. 
+
+### Question: How long does treatment take?
 
 Most individuals require a minimum of seven sessions, with many needing up to 11 sessions, depending on medical or psychological contributors.
 
-### Question 3: What makes you different?
+### Question: What makes you different?
 
 We combine a thoughtful, human-centered approach with clear communication and reliable results. It's not just what we do — it's how we do it that sets us apart.
 
-### Question 4: Is this therapy?
+### Question: Is this therapy?
 
 Yes, this is evidence-based Cognitive Behavioral Therapy for Insomnia. This is not sleep coaching or a list of suggestions to maybe improve your sleep. It works for 95% of individuals who adhere to the program and complete it.
 
-### Question 5: Do you treat co-occurring conditions?
+### Question: Do you treat co-occurring conditions?
 
 Yes. Insomnia Warriors specializes in cases involving anxiety, PTSD, depression, chronic pain, and other medical contributors.
 
-### Question 6: Do you accept HSA/FSA or provide superbills?
+### Question: Do you accept HSA/FSA or provide superbills?
 
 Yes. Sessions may be eligible for reimbursement depending on your plan. We provide documentation upon request. We do not take medical insurance or bill medical insurance companies as part of this program.
 
-### Question 7: Why is a sleep diary critical?
+### Question: Why is a sleep diary critical?
 
 Every session starts with a review of your sleep diary. This provides us evidence of whether we have addressed all the components of your insomnia.
 
 When we are missing a component of your insomnia, we will plateau and your sleep improvement will stagnate. This will show in your sleep diary, and is why daily sleep diaries are so integral to this program. Every person's CBT-I therapy will look different based on their unique makeup.
 
-### Question 8: Do you work with people who take sleep medication?
+### Question: Do you work with people who take sleep medication?
 
 A close coordination with medical providers will be critical if you are taking sleep medications to determine if the sleep medication is for sleep only or for treating an underlying medical condition. If the medications are for sleeping only, we will work with your therapist, psychiatrist, or physician to wean you off your sleep medications so that your sleep is achieved through natural body processes. You will learn how to do this through this program.
 
-### Question 9: What if I have tried everything?
+### Question: What if I have tried everything?
 
 We will discuss all the things you have tried in the past and determine which pieces were missing, or which things needed to be tried in parallel that were potentially missed.
-
-### Question 10: How do I receive my sessions?
-
-All visits are Telehealth through a medically and HIPAA secure platform. 
 
 ### Call to Action
 

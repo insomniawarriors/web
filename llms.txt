@@ -1,0 +1,49 @@
+# Insomnia Warriors
+
+> Clinically grounded CBT-I (Cognitive Behavioral Therapy for Insomnia) treatment program for chronic insomnia.
+
+## About
+
+Insomnia Warriors is a clinical CBT-I treatment practice led by Tierza Clerc, OTR/L, CBT-I. The program provides evidence-based therapy for individuals experiencing chronic insomnia and co-occurring conditions such as anxiety, PTSD, depression, chronic pain, and other medical contributors.
+
+CBT-I is recognized as the gold standard treatment for chronic insomnia by the American College of Physicians. Unlike sleep medication, CBT-I treats the root cause of insomnia and produces lasting results without side effects or dependency risk.
+
+## Provider
+
+- Name: Tierza Clerc
+- Credentials: OTR/L (Occupational Therapist, Registered/Licensed), CBT-I Certified
+- Experience: 26 years in the medical field (23 years medical massage, 3 years occupational therapy)
+- Education: UW Medicine, Colorado State University
+- Tierza experienced insomnia herself and completed the CBT-I program as a practitioner, giving her firsthand understanding of what clients go through.
+
+## Program Details
+
+- Type: Clinical CBT-I treatment (not coaching, not tips)
+- Duration: 7–11 sessions typical
+- Success rate: 95% among individuals who adhere to and complete the program
+- Format: Weekly treatment sessions with daily sleep diary tracking
+- Components: Clinical insomnia assessment, CBT-I treatment protocol, co-occurring condition integration
+- Treatment techniques: Sleep scheduling, stimulus control, cognitive reframing, behavioral modification, relaxation techniques
+- Conditions treated: Chronic insomnia, anxiety, PTSD, depression, chronic pain, hormonal changes, long COVID, sleep medication dependence
+
+## Payment
+
+- HSA/FSA accepted
+- Superbills provided for potential insurance reimbursement
+- Does not bill medical insurance directly
+
+## Contact
+
+- Email: insomniawarriors@pm.me
+- Phone: (253) 223-1751
+- Website: https://insomniawarriors.github.io/web/
+
+## Pages
+
+- [Home](https://insomniawarriors.github.io/web/): Overview of the practice, provider bio, symptoms checklist, differentiators
+- [The Program](https://insomniawarriors.github.io/web/program.html): Detailed program components and 5-step treatment process
+- [Why CBT-I](https://insomniawarriors.github.io/web/why-cbti.html): Evidence for CBT-I, benefits, comparison vs. sleep medication
+- [Meet Tierza](https://insomniawarriors.github.io/web/about.html): Full provider biography and treatment philosophy
+- [Testimonials](https://insomniawarriors.github.io/web/testimonials.html): Client reviews and outcomes
+- [FAQs](https://insomniawarriors.github.io/web/faqs.html): Common questions about treatment, sessions, insurance, and sleep diaries
+- [Contact](https://insomniawarriors.github.io/web/contact.html): Contact form and consultation scheduling

@@ -290,19 +290,22 @@ def parse_friendly_markdown(raw: str) -> dict[str, Any]:
         return {"heading": values["Heading"], "text": values["Text"], "button": button_value(values["Button"])}
 
     header_lines = [line for line in section("Header (appears on every page)").splitlines() if line.strip().startswith("- ")]
-    nav_key_by_label = {
-        "Home": "home",
-        "The Program": "program",
-        "Why CBT-I": "why_cbti",
-        "Meet Tierza": "about",
-        "Testimonials": "testimonials",
-        "FAQs": "faqs",
-        "Get Started": "contact",
+    nav_key_by_url = {
+        "index.html": "home",
+        "program.html": "program",
+        "why-cbti.html": "why_cbti",
+        "about.html": "about",
+        "testimonials.html": "testimonials",
+        "faqs.html": "faqs",
+        "contact.html": "contact",
     }
     nav = []
     for line in header_lines:
         item = plain_link_item(line)
-        item["key"] = nav_key_by_label[item["label"]]
+        try:
+            item["key"] = nav_key_by_url[item["url"]]
+        except KeyError as exc:
+            raise ValueError(f"Unknown header link URL: {item['url']}") from exc
         if "(button)" in line:
             item["button"] = "true"
         nav.append(item)

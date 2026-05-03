@@ -413,8 +413,16 @@ p:last-child { margin-bottom: 0; }
   object-fit: cover;
 }
 
+.credential-block {
+  display: inline-flex;
+  align-items: center;
+  gap: 0;
+  margin-bottom: 20px;
+}
+
 .about-content .credential-tag {
-  display: inline-block;
+  display: flex;
+  align-items: center;
   padding: 6px 16px;
   background: var(--gold-light);
   color: var(--black);
@@ -422,7 +430,7 @@ p:last-child { margin-bottom: 0; }
   font-weight: 700;
   letter-spacing: 0.06em;
   text-transform: uppercase;
-  margin-bottom: 20px;
+  height: 40px;
 }
 
 .about-content h2 { margin-bottom: 20px; }
@@ -432,24 +440,22 @@ p:last-child { margin-bottom: 0; }
 .credentials-bar {
   display: flex;
   align-items: center;
-  justify-content: center;
-  gap: 48px;
-  flex-wrap: wrap;
-  margin-top: 32px;
-  padding-top: 32px;
-  border-top: 1px solid var(--border);
+  gap: 0;
+  flex-wrap: nowrap;
+}
+
+.credentials-bar a {
+  display: flex;
+  align-items: center;
+  height: 40px;
+  padding: 4px 12px;
+  background: var(--gold-light);
+  border-left: 1px solid var(--border);
 }
 
 .credentials-bar img {
-  height: 40px;
+  height: 28px;
   width: auto;
-  opacity: 0.7;
-  filter: grayscale(100%);
-  transition: all 0.3s;
-}
-.credentials-bar img:hover {
-  opacity: 1;
-  filter: grayscale(0%);
 }
 
 /* --- Why It Works / Differentiators --- */
@@ -1030,6 +1036,5 @@ p:last-child { margin-bottom: 0; }
 
   .testimonials-grid { grid-template-columns: 1fr; }
 
-  .credentials-bar { gap: 24px; }
   .credentials-bar img { height: 32px; }
 }

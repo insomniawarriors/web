@@ -827,7 +827,6 @@ def render_home(page: dict[str, Any], site: dict[str, Any]) -> str:
     )
     cards = "\n".join(
         f"""        <div class="diff-card">
-          <div class="icon-circle">{item["icon"]}</div>
           <h4>{text(item["title"])}</h4>
           <p>{text(item["text"])}</p>
         </div>"""

@@ -889,7 +889,7 @@ p:last-child { margin-bottom: 0; }
 /* --- Stat bar --- */
 .stat-bar {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(2, 1fr);
   text-align: center;
   gap: 0;
   background: var(--white);

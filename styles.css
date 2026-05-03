@@ -984,6 +984,14 @@ p:last-child { margin-bottom: 0; }
     gap: 40px;
   }
 
+  .about-content {
+    text-align: center;
+  }
+
+  .credential-block {
+    justify-content: center;
+  }
+
   .footer-grid {
     grid-template-columns: 1fr;
     gap: 32px;

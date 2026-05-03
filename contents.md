@@ -312,6 +312,10 @@ A close coordination with medical providers will be critical if you are taking s
 
 We will discuss all the things you have tried in the past and determine which pieces were missing, or which things needed to be tried in parallel that were potentially missed.
 
+### Question 10: How do I receive my sessions?
+
+All visits are Telehealth through a medically and HIPAA secure platform. 
+
 ### Call to Action
 
 - Heading: Still Have Questions?

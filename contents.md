@@ -282,7 +282,7 @@ Each session begins with a review of your sleep diary. This allows us to calcula
 
 All visits are Telehealth through a medically and HIPAA secure platform. 
 
-### Questions: How long are sessions?
+### Question: How long are sessions?
 
 Sessions are typically 60 minutes in length. Towards the end of the program, it may be possible to have visits as short as 15-20 minutes.
 

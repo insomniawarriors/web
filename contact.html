@@ -92,24 +92,24 @@
             <div class="form-row">
               <div class="form-group">
                 <label for="first-name">First Name</label>
-                <input type="text" id="first-name" required>
+                <input type="text" id="first-name" required aria-label="First name">
               </div>
               <div class="form-group">
                 <label for="last-name">Last Name</label>
-                <input type="text" id="last-name" required>
+                <input type="text" id="last-name" required aria-label="Last name">
               </div>
             </div>
             <div class="form-group">
               <label for="email">Email</label>
-              <input type="email" id="email" required>
+              <input type="email" id="email" required aria-label="Email address">
             </div>
             <div class="form-group">
               <label for="phone">Phone</label>
-              <input type="tel" id="phone" required>
+              <input type="tel" id="phone" required aria-label="Phone number">
             </div>
             <div class="form-group">
               <label for="concern">Primary Concern</label>
-              <select id="concern">
+              <select id="concern" aria-label="Primary concern">
                 <option value="">Select one...</option>
                 <option value="Difficulty falling asleep">Difficulty falling asleep</option>
                 <option value="Frequent nighttime waking">Frequent nighttime waking</option>
@@ -122,10 +122,16 @@
             </div>
             <div class="form-group">
               <label for="message">Tell Us About Your Sleep</label>
-              <textarea id="message" placeholder="How long have you been experiencing sleep difficulties? What have you tried?"></textarea>
+              <textarea id="message" placeholder="How long have you been experiencing sleep difficulties? What have you tried?" aria-label="Tell us about your sleep"></textarea>
             </div>
             <button type="submit" class="btn btn-primary">Send Message</button>
           </form>
+          <div id="form-confirmation" style="display:none;text-align:center;padding:48px 24px;">
+            <div style="font-size:2.5rem;margin-bottom:16px;">&#9993;</div>
+            <h3 style="margin-bottom:12px;">Almost there!</h3>
+            <p style="color:var(--text-light);max-width:400px;margin:0 auto 24px;">Your email client should now be open with your message ready to send. Please press <strong>Send</strong> in your email app to complete your inquiry.</p>
+            <p style="font-size:0.85rem;color:var(--light-gray);">Didn't see your email app open? <a href="mailto:insomniawarriors@pm.me" style="color:var(--turquoise);">Click here to email us directly.</a></p>
+          </div>
           <script>
             function sendMail() {
               var firstName = document.getElementById('first-name').value.trim();
@@ -165,6 +171,9 @@
               window.location.href = 'mailto:insomniawarriors@pm.me'
                 + '?subject=' + encodeURIComponent(subject)
                 + '&body=' + encodeURIComponent(body);
+
+              document.getElementById('form-confirmation').style.display = 'block';
+              document.getElementById('contact-form').style.display = 'none';
 
               return false;
             }

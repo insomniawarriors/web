@@ -212,7 +212,7 @@
 
 ### Page Header
 
-- Section label: Your Therapist
+- Section label: Your Team
 - Heading: Meet Tierza Clerc
 - Subtitle: Therapists who have walked the same path to better sleep
 

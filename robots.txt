@@ -26,4 +26,4 @@ Allow: /
 User-agent: Bingbot
 Allow: /
 
-Sitemap: https://insomniawarriors.com/sitemap.xml
+Sitemap: https://www.insomniawarriors.com/sitemap.xml

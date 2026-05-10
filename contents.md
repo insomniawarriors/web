@@ -34,7 +34,7 @@
 
 - Headline: Insomnia is a treatable condition
 - Subtitle: Without drugs, just behavioral therapy
-- Description: Cognitive Behavioral Therapy for Insomnia (CBT-I) is a program for individuals experiencing chronic insomnia and co-occurring conditions such as anxiety, PTSD, depression, chronic pain, and other medical contributors. This program provides a clinically guided pathway to restore natural sleep with the OT lens of the whole person as the focus.
+- Description: Occupational Therapy driven Cognitive Behavioral Therapy for Insomnia (CBT-I) is a program for individuals experiencing chronic insomnia and co-occurring conditions such as anxiety, PTSD, depression, chronic pain, and other medical contributors. This program provides a clinically guided pathway to restore natural sleep with the OT lens of the whole person as the focus.
 - Button 1: Schedule a Consultation [Link: contact.html]
 - Button 2: Learn About the Program [Link: program.html]
 

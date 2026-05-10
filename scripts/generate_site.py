@@ -71,6 +71,7 @@ ICON_DEFAULTS = {
     "home.why_works": ["&#9998;", "&#10084;", "&#9632;", "&#9733;", "&#9829;"],
     "program.components": ["&#9998;", "&#9881;", "&#10084;"],
     "why_cbti.cards": ["&#9650;", "&#9745;", "&#8635;", "&#9881;", "&#10024;"],
+    "why_cbti.ot_cards": ["&#9733;", "&#9881;", "&#10084;", "&#9745;", "&#10024;"],
 }
 
 SHARED_ABOUT_IMAGES = {
@@ -416,8 +417,11 @@ def parse_friendly_markdown(raw: str) -> dict[str, Any]:
     }
 
     # Why CBT-I
-    block = page("Why CBT-I")
-    root_cause = bullets(subsection(block, "CBT-I Treats the Root Cause"))
+    block = page("Why OT driven CBT-I")
+    root_cause_raw = subsection(block, "CBT-I Treats the Root Cause")
+    # The OT sub-section is embedded with a "- ### " prefix (not a real subsection)
+    ot_split = re.split(r"^- ### .+$", root_cause_raw, maxsplit=1, flags=re.M)
+    root_cause = bullets(ot_split[0])
     why_cards = cards(root_cause, 5, "why_cbti.cards")
     for item in why_cards:
         if ": " in item["text"] and item["text"].endswith(".") is False:
@@ -432,7 +436,7 @@ def parse_friendly_markdown(raw: str) -> dict[str, Any]:
         if line.startswith("| ") and "---" not in line and not line.startswith("| Factor"):
             parts = [part.strip() for part in line.strip("|").split("|")]
             comparison.append({"factor": parts[0]})
-    data["pages"]["why_cbti"] = {
+    why_cbti_data: dict[str, Any] = {
         "meta": META_DEFAULTS["why_cbti"],
         "page_header": page_header(block),
         "root_cause": {
@@ -451,11 +455,28 @@ def parse_friendly_markdown(raw: str) -> dict[str, Any]:
         },
         "cta": cta_block(block),
     }
+    # Parse the OT-driven CBT-I sub-section if present
+    if len(ot_split) > 1:
+        ot_values = bullets(ot_split[1])
+        # Handle case-inconsistent keys (e.g. "card 3 text" vs "Card 3 text")
+        ot_values_ci = {k.lower(): v for k, v in ot_values.items()}
+        ot_cards_list = []
+        for i in range(1, 6):
+            title = ot_values_ci.get(f"card {i} title", "")
+            card_text = ot_values_ci.get(f"card {i} text", "")
+            ot_cards_list.append({"icon": ICON_DEFAULTS["why_cbti.ot_cards"][i - 1], "title": title, "text": card_text})
+        why_cbti_data["ot_diff"] = {
+            "label": ot_values_ci.get("section label", ""),
+            "heading": ot_values_ci.get("heading", ""),
+            "description": ot_values_ci.get("description", ""),
+            "cards": ot_cards_list,
+        }
+    data["pages"]["why_cbti"] = why_cbti_data
 
     # About
-    block = page("Meet Tierza")
+    block = page("Meet The Team")
     bio = bullets(subsection(block, "Bio"))
-    philosophy = bullets(subsection(block, "Why Tierza Does This Work"))
+    philosophy = bullets(subsection(block, "Why The Team Does This Work"))
     data["pages"]["about"] = {
         "meta": META_DEFAULTS["about"],
         "page_header": page_header(block),
@@ -994,6 +1015,31 @@ def render_why_cbti(page: dict[str, Any], site: dict[str, Any]) -> str:
           <h4><span class="icon">{item["icon"]}</span> {text(item["title"])}</h4>
           <p>{text(item["text"])}</p>{list_html}
         </div>""")
+    ot_section_html = ""
+    if "ot_diff" in page:
+        ot = page["ot_diff"]
+        ot_cards = "\n".join(
+            f"""        <div class="benefit-card">
+          <h4><span class="icon">{item["icon"]}</span> {text(item["title"])}</h4>
+          <p>{text(item["text"])}</p>
+        </div>"""
+            for item in ot["cards"]
+        )
+        ot_section_html = f"""
+
+  <!-- ====== OT-DRIVEN CBT-I ====== -->
+  <section class="section section-dark">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-label">{text(ot["label"])}</span>
+        <h2>{text(ot["heading"])}</h2>
+        <p>{text(ot["description"])}</p>
+      </div>
+      <div class="benefits-grid">
+{ot_cards}
+      </div>
+    </div>
+  </section>"""
     rows = "\n".join(
         f"""            <tr>
               <td>{text(item["factor"])}</td>
@@ -1016,7 +1062,7 @@ def render_why_cbti(page: dict[str, Any], site: dict[str, Any]) -> str:
 {chr(10).join(cards)}
       </div>
     </div>
-  </section>
+  </section>{ot_section_html}
 
   <!-- ====== COMPARISON ====== -->
   <section class="section section-cream">

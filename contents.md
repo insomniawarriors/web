@@ -175,7 +175,7 @@
 - Heading: What makes Occupational Therapy driven CBT-I different. 
 - Description: The field of OT focuses on all aspects of someone's life. CBT-I delivered by psychiatrists often includes both medications and the CBT-I therapy. OT driven CBT-I is a non-pharmacological program.
 
-- Card 1 title: Core Focus Occupational Therapy (OT)- driven CBT-I
+- Card 1 title: Core Focus
 - Card 1 text: Centers on daily life structure and function- how sleep fits into routines, roles, environments. Insomnia is treated as a disruption in occupations (sleep, work, self-care, leisure). Emphasizes rebuilding sustainable habits and rhythms.
 
 - Card 2 title: Intervention Style

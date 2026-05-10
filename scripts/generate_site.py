@@ -837,7 +837,9 @@ def about_block(section: dict[str, Any], cream: bool = False) -> str:
               <a href="{esc(section["logo_2_url"])}" target="_blank" rel="noopener"><img src="{esc(section["logo_2_image"])}" alt="{esc(section["logo_2_alt"])}"></a>
             </div>
           </div>
-          <h2>{text(section["heading"])}</h2>
+          <div class="split-lead">
+            <h2>{text(section["heading"])}</h2>
+          </div>
 {paras}
         </div>
       </div>
@@ -899,8 +901,10 @@ def render_home(page: dict[str, Any], site: dict[str, Any]) -> str:
               <a href="{esc(about["logo_2_url"])}" target="_blank" rel="noopener"><img src="{esc(about["logo_2_image"])}" alt="{esc(about["logo_2_alt"])}"></a>
             </div>
           </div>
-          <h2>{text(about["heading"])}</h2>
-          <p class="subtitle">{text(about["subtitle"])}</p>
+          <div class="split-lead">
+            <h2>{text(about["heading"])}</h2>
+            <p class="subtitle">{text(about["subtitle"])}</p>
+          </div>
           <p>{text(about["bio"])}</p>
           <div class="cta-wrapper">
             {button(about["button"])}
@@ -1194,8 +1198,10 @@ def render_contact(page: dict[str, Any], site: dict[str, Any]) -> str:
     <div class="container">
       <div class="contact-grid">
         <div class="contact-info">
-          <h2>{text(page["reach_out"]["heading"])}</h2>
-          <p>{text(page["reach_out"]["description"])}</p>
+          <div class="split-lead">
+            <h2>{text(page["reach_out"]["heading"])}</h2>
+            <p>{text(page["reach_out"]["description"])}</p>
+          </div>
 
           <div class="contact-detail">
             <div class="icon-box">&#9993;</div>

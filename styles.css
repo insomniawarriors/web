@@ -1,14 +1,5 @@
-/* ============================================================
-   Insomnia Warriors — Global Stylesheet
-   Professional CBT-I Clinical Practice
-   Palette: Turquoise + White (two-color palette)
-   Fonts: Poppins (body) + Manrope (headings)
-   ============================================================ */
-
-/* --- Reset & Base --- */
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
-/* --- Accessibility --- */
 .sr-only {
   position: absolute;
   width: 1px;
@@ -22,9 +13,8 @@
 }
 
 :root {
-  /* Brand Palette — two-color: turquoise + white */
   --turquoise:       #6CEDEF;
-  --turquoise-dark:  #4DDCE0;
+  --turquoise-dark:  #087D83;
   --turquoise-light: #96F3F5;
   --turquoise-pale:  #E8FCFD;
   --black:           #1a1a1a;
@@ -36,22 +26,20 @@
   --cream:           var(--turquoise-pale);
   --cream-light:     #f5fcfb;
   --white:           #ffffff;
-  --gold:            #D6A34B;
-  --gold-dark:       #b8882e;
+  --gold:            #8A651F;
+  --gold-dark:       #6F5018;
   --gold-light:      #f0e4cc;
   --gold-pale:       #faf5ec;
   --text:            #1a1a1a;
   --text-light:      #6b6b6b;
 
-  /* Typography — user's chosen fonts */
   --font-heading: 'Manrope', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
   --font-body:    'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
 
-  /* Spacing */
   --section-pad: clamp(60px, 8vw, 120px);
   --container:   1140px;
+  --content:     820px;
 
-  /* Transitions */
   --ease: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
@@ -70,7 +58,6 @@ img { max-width: 100%; height: auto; display: block; }
 a { color: inherit; text-decoration: none; }
 ul, ol { list-style: none; }
 
-/* --- Container --- */
 .container {
   width: 100%;
   max-width: var(--container);
@@ -78,7 +65,6 @@ ul, ol { list-style: none; }
   padding: 0 clamp(20px, 4vw, 40px);
 }
 
-/* --- Typography --- */
 h1, h2, h3, h4 {
   font-family: var(--font-heading);
   font-weight: 700;
@@ -112,7 +98,6 @@ h4 { font-size: 1.15rem; }
 p { margin-bottom: 1em; }
 p:last-child { margin-bottom: 0; }
 
-/* --- Buttons --- */
 .btn {
   display: inline-flex;
   align-items: center;
@@ -162,12 +147,11 @@ p:last-child { margin-bottom: 0; }
   border-color: var(--white);
 }
 
-/* --- Header / Navigation --- */
 .site-header {
   position: fixed;
   top: 0; left: 0; right: 0;
   z-index: 1000;
-  background: rgba(255, 255, 255, 0.95);
+  background: rgba(255, 255, 255, 0.97);
   backdrop-filter: blur(12px);
   border-bottom: 1px solid var(--border);
   transition: all 0.3s var(--ease);
@@ -181,7 +165,8 @@ p:last-child { margin-bottom: 0; }
   display: flex;
   align-items: center;
   justify-content: space-between;
-  height: 80px;
+  height: 72px;
+  gap: 20px;
 }
 
 .logo {
@@ -195,19 +180,19 @@ p:last-child { margin-bottom: 0; }
 }
 
 .logo-img {
-  height: 70px;
+  height: 72px;
   width: auto;
 }
 
 .nav-links {
   display: flex;
   align-items: center;
-  gap: 32px;
+  gap: clamp(16px, 2vw, 28px);
 }
 
 .nav-links a {
   font-family: var(--font-body);
-  font-size: 0.88rem;
+  font-size: 0.86rem;
   font-weight: 500;
   color: var(--dark-gray);
   position: relative;
@@ -234,10 +219,14 @@ p:last-child { margin-bottom: 0; }
 }
 
 .nav-cta {
-  margin-left: 8px;
+  margin-left: 2px;
   background: var(--turquoise);
   color: var(--black);
   border-color: var(--turquoise);
+  padding: 10px 20px;
+  min-height: 44px;
+  align-items: center;
+  white-space: nowrap;
 }
 .nav-cta:hover {
   background: var(--turquoise-dark);
@@ -245,15 +234,27 @@ p:last-child { margin-bottom: 0; }
 }
 .nav-cta::after { display: none; }
 
-/* Mobile Nav Toggle */
 .nav-toggle {
   display: none;
+  align-items: center;
+  justify-content: center;
   flex-direction: column;
   gap: 5px;
   background: none;
   border: none;
   cursor: pointer;
   padding: 8px;
+  width: 42px;
+  height: 42px;
+  border: 1px solid transparent;
+  transition: border-color 0.2s, background-color 0.2s;
+  position: relative;
+}
+.nav-toggle:hover,
+.nav-toggle:focus-visible {
+  border-color: var(--gold);
+  outline: none;
+  background: var(--gold-pale);
 }
 .nav-toggle span {
   display: block;
@@ -263,7 +264,28 @@ p:last-child { margin-bottom: 0; }
   transition: all 0.3s;
 }
 
-/* --- Hero Section --- */
+.nav-toggle::after {
+  content: '×';
+  display: none;
+  color: var(--black);
+  font-size: 2rem;
+  font-weight: 300;
+  line-height: 1;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -54%);
+}
+
+.nav-toggle[aria-expanded="true"] span {
+  opacity: 0;
+  transform: scaleX(0);
+}
+
+.nav-toggle[aria-expanded="true"]::after {
+  display: block;
+}
+
 .hero {
   position: relative;
   min-height: 92vh;
@@ -271,7 +293,7 @@ p:last-child { margin-bottom: 0; }
   align-items: center;
   overflow: hidden;
   background: var(--turquoise);
-  padding-top: 80px;
+  padding-top: 72px;
 }
 
 .hero-content {
@@ -327,7 +349,6 @@ p:last-child { margin-bottom: 0; }
   font-weight: 600;
 }
 
-/* --- Sections --- */
 .section {
   padding: var(--section-pad) 0;
 }
@@ -345,7 +366,7 @@ p:last-child { margin-bottom: 0; }
 
 .section-header {
   text-align: center;
-  max-width: 640px;
+  max-width: var(--content);
   margin: 0 auto 56px;
 }
 
@@ -357,12 +378,11 @@ p:last-child { margin-bottom: 0; }
 
 .section-footnote {
   color: var(--text-light);
-  max-width: 640px;
+  max-width: var(--content);
   margin-left: auto;
   margin-right: auto;
 }
 
-/* --- Who This Is For (Symptoms Grid) --- */
 .symptoms-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -403,7 +423,6 @@ p:last-child { margin-bottom: 0; }
   color: var(--dark-gray);
 }
 
-/* --- About / Meet Section --- */
 .about-grid {
   display: grid;
   grid-template-columns: 1fr 1.3fr;
@@ -453,7 +472,6 @@ p:last-child { margin-bottom: 0; }
   margin-top: 20px;
 }
 
-/* --- Credentials bar --- */
 .credentials-bar {
   display: flex;
   align-items: center;
@@ -475,7 +493,6 @@ p:last-child { margin-bottom: 0; }
   width: auto;
 }
 
-/* --- Why It Works / Differentiators --- */
 .diff-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
@@ -503,10 +520,9 @@ p:last-child { margin-bottom: 0; }
 .diff-card h4 { margin-bottom: 10px; }
 .diff-card p { font-size: 0.9rem; color: var(--dark-gray); }
 
-/* --- Program Steps --- */
 .steps {
   counter-reset: step;
-  max-width: 720px;
+  max-width: var(--content);
   margin: 48px auto 0;
 }
 
@@ -554,7 +570,6 @@ p:last-child { margin-bottom: 0; }
   line-height: 1.7;
 }
 
-/* --- CBT-I Benefits --- */
 .benefits-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
@@ -566,6 +581,7 @@ p:last-child { margin-bottom: 0; }
   background: var(--white);
   border: 1px solid var(--border);
   transition: all 0.3s var(--ease);
+  text-align: center;
 }
 
 .benefit-card:hover {
@@ -577,6 +593,7 @@ p:last-child { margin-bottom: 0; }
   margin-bottom: 12px;
   display: flex;
   align-items: center;
+  justify-content: center;
   gap: 10px;
 }
 
@@ -585,7 +602,11 @@ p:last-child { margin-bottom: 0; }
 
 .benefit-card ul {
   margin-top: 10px;
+  max-width: 360px;
+  margin-left: auto;
+  margin-right: auto;
   padding-left: 0;
+  text-align: left;
 }
 
 .benefit-card li {
@@ -604,7 +625,6 @@ p:last-child { margin-bottom: 0; }
   font-weight: 700;
 }
 
-/* --- Testimonials --- */
 .testimonials-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
@@ -664,9 +684,8 @@ p:last-child { margin-bottom: 0; }
   letter-spacing: 2px;
 }
 
-/* --- FAQ Accordion --- */
 .faq-list {
-  max-width: 760px;
+  max-width: var(--content);
   margin: 0 auto;
 }
 
@@ -729,9 +748,8 @@ p:last-child { margin-bottom: 0; }
   line-height: 1.8;
 }
 
-/* --- Philosophy / Prose Block --- */
 .prose-block {
-  max-width: 760px;
+  max-width: var(--content);
   margin: 0 auto;
 }
 
@@ -741,7 +759,6 @@ p:last-child { margin-bottom: 0; }
   margin-bottom: 20px;
 }
 
-/* --- Social Proof --- */
 .social-proof {
   display: inline-flex;
   align-items: center;
@@ -771,7 +788,6 @@ p:last-child { margin-bottom: 0; }
   font-style: italic;
 }
 
-/* --- Contact Section --- */
 .contact-grid {
   display: grid;
   grid-template-columns: 1fr 1.2fr;
@@ -896,7 +912,6 @@ p:last-child { margin-bottom: 0; }
   gap: 16px;
 }
 
-/* --- CTA Banner --- */
 .cta-banner {
   background: var(--turquoise);
   padding: 64px 0;
@@ -906,7 +921,6 @@ p:last-child { margin-bottom: 0; }
 .cta-banner h2 { color: var(--black); margin-bottom: 12px; }
 .cta-banner p { color: var(--dark-gray); margin-bottom: 28px; font-size: 1.05rem; }
 
-/* --- Footer --- */
 .site-footer {
   background: var(--turquoise);
   color: var(--dark-gray);
@@ -952,7 +966,6 @@ p:last-child { margin-bottom: 0; }
   font-size: 0.8rem;
 }
 
-/* --- Disclaimer bar --- */
 .disclaimer {
   background: var(--turquoise-dark);
   padding: 14px 0;
@@ -962,7 +975,6 @@ p:last-child { margin-bottom: 0; }
   border-top: 1px solid rgba(0,0,0,0.08);
 }
 
-/* --- Utility --- */
 .text-center { text-align: center; }
 .mt-2 { margin-top: 16px; }
 .mt-4 { margin-top: 32px; }
@@ -973,7 +985,6 @@ p:last-child { margin-bottom: 0; }
   padding-bottom: 48px;
 }
 
-/* --- Page Header (inner pages) --- */
 .page-header {
   background: var(--turquoise);
   padding: 140px 0 70px;
@@ -983,7 +994,6 @@ p:last-child { margin-bottom: 0; }
 .page-header .subtitle { color: var(--dark-gray); }
 .page-header .section-label { color: var(--charcoal); }
 
-/* --- Stat bar --- */
 .stat-bar {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
@@ -1020,7 +1030,6 @@ p:last-child { margin-bottom: 0; }
   letter-spacing: 0.06em;
 }
 
-/* --- Comparison table --- */
 .comparison-table {
   width: 100%;
   border-collapse: collapse;
@@ -1054,9 +1063,8 @@ p:last-child { margin-bottom: 0; }
   color: var(--light-gray);
 }
 
-/* --- Callout box --- */
 .callout {
-  max-width: 760px;
+  max-width: var(--content);
   margin: 0 auto;
   padding: 32px 36px;
   background: var(--cream);
@@ -1066,9 +1074,6 @@ p:last-child { margin-bottom: 0; }
 .callout p { font-size: 0.93rem; color: var(--dark-gray); }
 .callout p:last-child { margin-bottom: 0; }
 
-/* ============================================================
-   Responsive
-   ============================================================ */
 @media (max-width: 900px) {
   .about-grid,
   .contact-grid {
@@ -1100,8 +1105,8 @@ p:last-child { margin-bottom: 0; }
   }
 }
 
-@media (max-width: 768px) {
-  .logo-img { height: 50px; }
+@media (max-width: 1040px) {
+  .header-inner { height: 72px; }
 
   .nav-links { display: none; }
   .nav-toggle { display: flex; }
@@ -1110,16 +1115,36 @@ p:last-child { margin-bottom: 0; }
     display: flex;
     flex-direction: column;
     position: absolute;
-    top: 80px;
-    left: 0; right: 0;
+    top: 72px;
+    right: clamp(20px, 4vw, 40px);
+    left: auto;
+    bottom: auto;
+    width: min(320px, calc(100vw - 40px));
+    height: auto;
+    min-height: 0;
+    z-index: 1001;
     background: var(--white);
-    padding: 24px;
-    gap: 20px;
-    border-bottom: 1px solid var(--border);
-    box-shadow: 0 8px 30px rgba(0,0,0,0.08);
+    padding: 22px;
+    gap: 16px;
+    border: 1px solid var(--border);
+    box-shadow: 0 18px 40px rgba(0,0,0,0.14);
   }
 
-  .hero { min-height: 80vh; }
+  .nav-links.open a {
+    font-size: 0.95rem;
+    text-align: left;
+  }
+
+  .nav-links.open .nav-cta {
+    margin: 6px 0 0;
+    width: 100%;
+    justify-content: center;
+  }
+
+  .hero {
+    min-height: 78vh;
+    padding-top: 72px;
+  }
 
   .hero-actions {
     flex-direction: column;

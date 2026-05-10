@@ -587,11 +587,17 @@ def head(page_key: str, page: dict[str, Any], site: dict[str, Any]) -> str:
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>{text(meta["title"])}</title>
   <meta name="description" content="{esc(meta["description"])}">
+  <link rel="canonical" href="{esc(url)}">
   <meta property="og:title" content="{esc(meta.get("og_title", meta["title"]))}">
   <meta property="og:description" content="{esc(meta.get("og_description", meta["description"]))}">
   <meta property="og:image" content="{esc(site["og_image"])}">
   <meta property="og:url" content="{esc(url)}">
   <meta property="og:type" content="website">
+  <meta property="og:site_name" content="{esc(site["name"])}">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="{esc(meta.get("og_title", meta["title"]))}">
+  <meta name="twitter:description" content="{esc(meta.get("og_description", meta["description"]))}">
+  <meta name="twitter:image" content="{esc(site["og_image"])}">
   <link rel="icon" type="image/png" sizes="32x32" href="images/favicons/favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="images/favicons/favicon-16x16.png">
   <link rel="icon" href="images/favicons/favicon.ico" sizes="any">
@@ -601,7 +607,7 @@ def head(page_key: str, page: dict[str, Any], site: dict[str, Any]) -> str:
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@500;700&family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="styles.css?v=20260510">
   <script type="application/ld+json">
   {json.dumps(schema, indent=4, ensure_ascii=False)}
   </script>
@@ -756,7 +762,7 @@ def header(active: str, site: dict[str, Any]) -> str:
       <nav class="nav-links" id="nav-links">
 {chr(10).join(links)}
       </nav>
-      <button class="nav-toggle" id="nav-toggle" aria-label="Toggle navigation">
+      <button class="nav-toggle" id="nav-toggle" aria-label="Toggle navigation" aria-controls="nav-links" aria-expanded="false">
         <span></span><span></span><span></span>
       </button>
     </div>
@@ -1343,8 +1349,20 @@ def render_page(page_key: str, data: dict[str, Any]) -> str:
 
   <script>
     const header = document.getElementById('site-header');
+    const navToggle = document.getElementById('nav-toggle');
+    const navLinks = document.getElementById('nav-links');
     window.addEventListener('scroll', () => header.classList.toggle('scrolled', window.scrollY > 40));
-    document.getElementById('nav-toggle').addEventListener('click', () => document.getElementById('nav-links').classList.toggle('open'));
+    navToggle.addEventListener('click', () => {{
+      const isOpen = navLinks.classList.toggle('open');
+      navToggle.setAttribute('aria-expanded', String(isOpen));
+      document.body.classList.toggle('nav-open', isOpen);
+    }});
+    navLinks.addEventListener('click', (event) => {{
+      if (event.target.tagName !== 'A') return;
+      navLinks.classList.remove('open');
+      navToggle.setAttribute('aria-expanded', 'false');
+      document.body.classList.remove('nav-open');
+    }});
   </script>
 </body>
 </html>

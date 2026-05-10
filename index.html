@@ -5,11 +5,17 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Insomnia Warriors — Clinical CBT-I Program for Chronic Insomnia</title>
   <meta name="description" content="Insomnia Warriors delivers a clinically grounded CBT-I program to help you reclaim restful sleep. Led by Tierza Clerc, OTR/L, CBT-I — 26 years of clinical experience.">
+  <link rel="canonical" href="https://www.insomniawarriors.com/">
   <meta property="og:title" content="Insomnia Warriors — Clinical CBT-I Program for Chronic Insomnia">
   <meta property="og:description" content="Clinically grounded CBT-I treatment for chronic insomnia. Led by Tierza Clerc, OTR/L — 26 years of clinical experience.">
   <meta property="og:image" content="https://www.insomniawarriors.com/images/logo.png">
   <meta property="og:url" content="https://www.insomniawarriors.com/">
   <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Insomnia Warriors">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Insomnia Warriors — Clinical CBT-I Program for Chronic Insomnia">
+  <meta name="twitter:description" content="Clinically grounded CBT-I treatment for chronic insomnia. Led by Tierza Clerc, OTR/L — 26 years of clinical experience.">
+  <meta name="twitter:image" content="https://www.insomniawarriors.com/images/logo.png">
   <link rel="icon" type="image/png" sizes="32x32" href="images/favicons/favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="images/favicons/favicon-16x16.png">
   <link rel="icon" href="images/favicons/favicon.ico" sizes="any">
@@ -19,7 +25,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@500;700&family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="styles.css?v=20260510">
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -94,7 +100,7 @@
         <a href="faqs.html">FAQs</a>
         <a href="contact.html" class="btn btn-primary nav-cta">Get Started</a>
       </nav>
-      <button class="nav-toggle" id="nav-toggle" aria-label="Toggle navigation">
+      <button class="nav-toggle" id="nav-toggle" aria-label="Toggle navigation" aria-controls="nav-links" aria-expanded="false">
         <span></span><span></span><span></span>
       </button>
     </div>
@@ -264,8 +270,20 @@
 
   <script>
     const header = document.getElementById('site-header');
+    const navToggle = document.getElementById('nav-toggle');
+    const navLinks = document.getElementById('nav-links');
     window.addEventListener('scroll', () => header.classList.toggle('scrolled', window.scrollY > 40));
-    document.getElementById('nav-toggle').addEventListener('click', () => document.getElementById('nav-links').classList.toggle('open'));
+    navToggle.addEventListener('click', () => {
+      const isOpen = navLinks.classList.toggle('open');
+      navToggle.setAttribute('aria-expanded', String(isOpen));
+      document.body.classList.toggle('nav-open', isOpen);
+    });
+    navLinks.addEventListener('click', (event) => {
+      if (event.target.tagName !== 'A') return;
+      navLinks.classList.remove('open');
+      navToggle.setAttribute('aria-expanded', 'false');
+      document.body.classList.remove('nav-open');
+    });
   </script>
 </body>
 </html>

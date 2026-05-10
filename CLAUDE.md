@@ -3,7 +3,7 @@
 ## What This Is
 Professional website for **Insomnia Warriors**, a CBT-I (Cognitive Behavioral Therapy for Insomnia) practice run by **Tierza Clerc, OTR/L, CBT-I Certified**. Static HTML/CSS site hosted on GitHub Pages.
 
-**Live URL:** https://insomniawarriors.github.io/web/
+**Live URL:** https://insomniawarriors.com/
 
 ## Tech Stack
 - Static HTML + CSS (no build tools, no framework)

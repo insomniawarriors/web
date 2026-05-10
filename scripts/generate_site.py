@@ -318,8 +318,8 @@ def parse_friendly_markdown(raw: str) -> dict[str, Any]:
     data: dict[str, Any] = {
         "site": {
             "name": "Insomnia Warriors",
-            "base_url": "https://insomniawarriors.github.io/web/",
-            "og_image": "https://insomniawarriors.github.io/web/images/logo.png",
+            "base_url": "https://insomniawarriors.com/",
+            "og_image": "https://insomniawarriors.com/images/logo.png",
             "logo_image": "images/logo.png",
             "logo_alt": "Insomnia Warriors",
             "provider_name": "Tierza Clerc",

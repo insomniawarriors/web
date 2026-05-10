@@ -36,14 +36,14 @@ CBT-I is recognized as the gold standard treatment for chronic insomnia by the A
 
 - Email: insomniawarriors@pm.me
 - Phone: (253) 223-1751
-- Website: https://insomniawarriors.github.io/web/
+- Website: https://insomniawarriors.com/
 
 ## Pages
 
-- [Home](https://insomniawarriors.github.io/web/): Overview of the practice, provider bio, symptoms checklist, differentiators
-- [The Program](https://insomniawarriors.github.io/web/program.html): Detailed program components and 5-step treatment process
-- [Why CBT-I](https://insomniawarriors.github.io/web/why-cbti.html): Evidence for CBT-I, benefits, comparison vs. sleep medication
-- [Meet Tierza](https://insomniawarriors.github.io/web/about.html): Full provider biography and treatment philosophy
-- [Testimonials](https://insomniawarriors.github.io/web/testimonials.html): Client reviews and outcomes
-- [FAQs](https://insomniawarriors.github.io/web/faqs.html): Common questions about treatment, sessions, insurance, and sleep diaries
-- [Contact](https://insomniawarriors.github.io/web/contact.html): Contact form and consultation scheduling
+- [Home](https://insomniawarriors.com/): Overview of the practice, provider bio, symptoms checklist, differentiators
+- [The Program](https://insomniawarriors.com/program.html): Detailed program components and 5-step treatment process
+- [Why CBT-I](https://insomniawarriors.com/why-cbti.html): Evidence for CBT-I, benefits, comparison vs. sleep medication
+- [Meet Tierza](https://insomniawarriors.com/about.html): Full provider biography and treatment philosophy
+- [Testimonials](https://insomniawarriors.com/testimonials.html): Client reviews and outcomes
+- [FAQs](https://insomniawarriors.com/faqs.html): Common questions about treatment, sessions, insurance, and sleep diaries
+- [Contact](https://insomniawarriors.com/contact.html): Contact form and consultation scheduling

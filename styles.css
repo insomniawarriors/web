@@ -100,7 +100,7 @@ h4 { font-size: 1.15rem; }
 p {
   margin-bottom: 1em;
   text-align: justify;
-  text-align-last: center;
+  text-align-last: left;
   text-justify: inter-word;
   hyphens: auto;
 }
@@ -315,6 +315,7 @@ p:last-child { margin-bottom: 0; }
   overflow: hidden;
   background: var(--turquoise);
   padding-top: 72px;
+  padding-bottom: 72px;
 }
 
 .hero-content {
@@ -343,7 +344,7 @@ p:last-child { margin-bottom: 0; }
   font-weight: 400;
   line-height: 1.8;
   text-align: justify;
-  text-align-last: center;
+  text-align-last: left;
 }
 
 .hero-actions {
@@ -1188,8 +1189,9 @@ p:last-child { margin-bottom: 0; }
   }
 
   .hero {
-    min-height: 78vh;
-    padding-top: 72px;
+    min-height: 92vh;
+    padding-top: 96px;
+    padding-bottom: 72px;
   }
 
   .hero-actions {
@@ -1218,7 +1220,11 @@ p:last-child { margin-bottom: 0; }
   h2 { font-size: 1.35rem; }
   .section { padding: 48px 0; }
   .page-header { padding: 100px 0 40px; }
-  .hero { min-height: 70vh; }
+  .hero {
+    min-height: 86vh;
+    padding-top: 96px;
+    padding-bottom: 64px;
+  }
   .hero h1 { font-size: 2rem; }
   .benefits-grid { grid-template-columns: 1fr; }
   .comparison-table { font-size: 0.85rem; }

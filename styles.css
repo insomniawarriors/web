@@ -188,6 +188,7 @@ p:last-child { margin-bottom: 0; }
   justify-content: space-between;
   height: 72px;
   gap: 20px;
+  position: relative;
 }
 
 .logo {
@@ -198,6 +199,41 @@ p:last-child { margin-bottom: 0; }
   font-size: 1.25rem;
   font-weight: 700;
   color: var(--black);
+}
+
+.brand-lockup {
+  gap: 10px;
+  min-width: 220px;
+}
+
+.logo-mark {
+  width: 64px;
+  height: 64px;
+  flex: 0 0 64px;
+  object-fit: contain;
+}
+
+.logo-type {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  line-height: 1;
+  white-space: nowrap;
+}
+
+.logo-name {
+  font-family: Georgia, 'Times New Roman', serif;
+  font-size: 1.18rem;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+}
+
+.logo-tagline {
+  margin-top: 5px;
+  font-family: var(--font-body);
+  font-size: 0.62rem;
+  font-weight: 500;
+  letter-spacing: 0.01em;
 }
 
 .logo-img {
@@ -398,8 +434,8 @@ p:last-child { margin-bottom: 0; }
   color: var(--text-light);
   margin-top: 16px;
   font-size: 1.05rem;
-  text-align: center;
-  text-align-last: center;
+  text-align: justify;
+  text-align-last: left;
 }
 
 .section-footnote {
@@ -417,8 +453,8 @@ p:last-child { margin-bottom: 0; }
 }
 
 .split-lead p {
-  text-align: center;
-  text-align-last: center;
+  text-align: justify;
+  text-align-last: left;
 }
 
 .split-lead h2 {
@@ -427,6 +463,11 @@ p:last-child { margin-bottom: 0; }
 
 .split-lead p {
   color: var(--text-light);
+}
+
+.split-lead .subtitle {
+  text-align: center;
+  text-align-last: center;
 }
 
 .symptoms-grid {
@@ -644,7 +685,13 @@ p:last-child { margin-bottom: 0; }
 }
 
 .benefit-card h4 .icon { color: var(--turquoise-dark); font-size: 1.2rem; }
-.benefit-card p { font-size: 0.92rem; color: var(--text-light); }
+
+.benefit-card p {
+  font-size: 0.92rem;
+  color: var(--text-light);
+  text-align: justify;
+  text-align-last: left;
+}
 
 .benefit-card ul {
   margin-top: 10px;
@@ -980,8 +1027,41 @@ p:last-child { margin-bottom: 0; }
   border-bottom: 1px solid rgba(0,0,0,0.1);
 }
 
-.footer-brand .logo { color: var(--black); margin-bottom: 16px; }
-.footer-brand .logo-img { }
+.footer-brand .logo {
+  color: var(--black);
+  margin-bottom: 16px;
+}
+
+.footer-lockup {
+  align-items: center;
+  gap: 8px;
+  width: fit-content;
+  min-height: 64px;
+  padding: 6px 12px 6px 6px;
+  background: var(--white);
+}
+
+.footer-logo-mark {
+  width: 52px;
+  height: 52px;
+  flex: 0 0 52px;
+  object-fit: contain;
+}
+
+.footer-lockup .logo-type {
+  height: 52px;
+  align-items: center;
+  text-align: center;
+}
+
+.footer-lockup .logo-name {
+  font-size: 1.05rem;
+}
+
+.footer-lockup .logo-tagline {
+  font-size: 0.58rem;
+}
+
 .footer-brand p { font-size: 0.88rem; line-height: 1.7; max-width: 300px; }
 
 .footer-links h4 {
@@ -1154,6 +1234,19 @@ p:last-child { margin-bottom: 0; }
 
 @media (max-width: 1040px) {
   .header-inner { height: 72px; }
+
+  .brand-lockup {
+    min-width: 0;
+  }
+
+  .brand-lockup .logo-type {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    align-items: center;
+    text-align: center;
+    transform: translate(-50%, -50%);
+  }
 
   .nav-links { display: none; }
   .nav-toggle { display: flex; }

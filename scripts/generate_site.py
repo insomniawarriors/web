@@ -607,7 +607,7 @@ def head(page_key: str, page: dict[str, Any], site: dict[str, Any]) -> str:
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@500;700&family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css?v=20260510">
+  <link rel="stylesheet" href="styles.css?v=20260510c">
   <script type="application/ld+json">
   {json.dumps(schema, indent=4, ensure_ascii=False)}
   </script>
@@ -756,8 +756,12 @@ def header(active: str, site: dict[str, Any]) -> str:
     return f"""  <!-- ====== HEADER ====== -->
   <header class="site-header" id="site-header">
     <div class="container header-inner">
-      <a href="index.html" class="logo">
-        <img src="{esc(site["logo_image"])}" alt="{esc(site["logo_alt"])}" class="logo-img">
+      <a href="index.html" class="logo brand-lockup" aria-label="{esc(site["logo_alt"])} home">
+        <img src="images/logo-cropped.png" alt="" class="logo-mark" aria-hidden="true">
+        <span class="logo-type">
+          <span class="logo-name">Insomnia Warriors</span>
+          <span class="logo-tagline">Defeat insomnia</span>
+        </span>
       </a>
       <nav class="nav-links" id="nav-links">
 {chr(10).join(links)}
@@ -777,15 +781,19 @@ def footer(site: dict[str, Any]) -> str:
     <div class="container">
       <div class="footer-grid">
         <div class="footer-brand">
-          <a href="index.html" class="logo">
-            <img src="{esc(site["logo_image"])}" alt="{esc(site["logo_alt"])}" class="logo-img">
+          <a href="index.html" class="logo footer-lockup" aria-label="{esc(site["logo_alt"])} home">
+            <img src="images/logo-cropped.png" alt="" class="footer-logo-mark" aria-hidden="true">
+            <span class="logo-type">
+              <span class="logo-name">Insomnia Warriors</span>
+              <span class="logo-tagline">Defeat insomnia</span>
+            </span>
           </a>
           <p>{text(footer_data["tagline"])}</p>
         </div>
         <div class="footer-links">
           <h4>{text(footer_data["contact_heading"])}</h4>
-          <a href="mailto:{esc(contact["email"])}">{text(contact["email"])}</a>
-          <a href="{esc(contact["phone_href"])}">{text(contact["phone_display"])}</a>
+          <a href="mailto:{esc(contact["email"])}" aria-label="Email Insomnia Warriors" title="Email Insomnia Warriors">{text(contact["email"])}</a>
+          <a href="{esc(contact["phone_href"])}" aria-label="Call Insomnia Warriors" title="Call Insomnia Warriors">{text(contact["phone_display"])}</a>
           <a href="{esc(footer_data["cta_url"])}">{text(footer_data["cta_text"])}</a>
         </div>
       </div>

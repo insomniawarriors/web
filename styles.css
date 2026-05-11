@@ -23,8 +23,9 @@
   --mid-gray:        #6b6b6b;
   --light-gray:      #a0a0a0;
   --border:          #e5e5e5;
-  --cream:           var(--turquoise-pale);
-  --cream-light:     #f5fcfb;
+  --surface-white:   #ffffff;
+  --surface-aqua:    var(--turquoise);
+  --surface-pale:    var(--turquoise-pale);
   --white:           #ffffff;
   --gold:            #8A651F;
   --gold-dark:       #6F5018;
@@ -98,24 +99,14 @@ h4 { font-size: 1.15rem; }
 
 p {
   margin-bottom: 1em;
+}
+p:last-child { margin-bottom: 0; }
+
+p:not(.subtitle) {
   text-align: justify;
   text-align-last: left;
   text-justify: inter-word;
   hyphens: auto;
-}
-p:last-child { margin-bottom: 0; }
-
-.nav-links p,
-.btn p,
-.footer-links p,
-.contact-detail p,
-.detail-text p,
-.form-group p,
-.faq-question p,
-.benefit-card li,
-.comparison-table p {
-  text-align: initial;
-  text-align-last: initial;
 }
 
 .btn {
@@ -179,18 +170,17 @@ p:last-child { margin-bottom: 0; }
   position: relative;
 }
 
-.logo {
+.logo-lockup {
   display: flex;
   align-items: center;
-  gap: 12px;
+  gap: 10px;
   font-family: var(--font-heading);
   font-size: 1.25rem;
   font-weight: 700;
   color: var(--black);
 }
 
-.brand-lockup {
-  gap: 10px;
+.logo-lockup-header {
   min-width: 220px;
 }
 
@@ -222,6 +212,33 @@ p:last-child { margin-bottom: 0; }
   font-size: 0.62rem;
   font-weight: 500;
   letter-spacing: 0.01em;
+}
+
+.logo-lockup-footer {
+  width: fit-content;
+  min-height: 64px;
+  padding: 6px 12px 6px 6px;
+  background: var(--white);
+}
+
+.logo-lockup-footer .logo-mark {
+  width: 52px;
+  height: 52px;
+  flex-basis: 52px;
+}
+
+.logo-lockup-footer .logo-type {
+  height: 52px;
+  align-items: center;
+  text-align: center;
+}
+
+.logo-lockup-footer .logo-name {
+  font-size: 1.05rem;
+}
+
+.logo-lockup-footer .logo-tagline {
+  font-size: 0.58rem;
 }
 
 .nav-links {
@@ -356,7 +373,7 @@ p:last-child { margin-bottom: 0; }
   margin-bottom: 20px;
 }
 
-.hero .subtitle {
+.hero-copy {
   color: var(--black);
   margin-bottom: 28px;
   font-size: 1.1rem;
@@ -379,13 +396,13 @@ p:last-child { margin-bottom: 0; }
 }
 
 .section-dark {
-  background: var(--turquoise);
+  background: var(--surface-aqua);
   color: var(--black);
 }
 .section-dark h2, .section-dark h3, .section-dark h4 { color: var(--black); }
 .section-dark .section-label { color: var(--charcoal); }
 
-.section-cream { background: var(--white); }
+.section-cream { background: var(--surface-white); }
 
 .section-header {
   text-align: center;
@@ -397,8 +414,6 @@ p:last-child { margin-bottom: 0; }
   color: var(--text-light);
   margin-top: 16px;
   font-size: 1.05rem;
-  text-align: justify;
-  text-align-last: left;
 }
 
 .section-footnote {
@@ -415,22 +430,12 @@ p:last-child { margin-bottom: 0; }
   margin-right: auto;
 }
 
-.split-lead p {
-  text-align: justify;
-  text-align-last: left;
-}
-
 .split-lead h2 {
   margin-bottom: 16px;
 }
 
 .split-lead p {
   color: var(--text-light);
-}
-
-.split-lead .subtitle {
-  text-align: center;
-  text-align-last: center;
 }
 
 .symptoms-grid {
@@ -484,7 +489,7 @@ p:last-child { margin-bottom: 0; }
   position: relative;
   overflow: hidden;
   aspect-ratio: 3/4;
-  background: var(--cream);
+  background: var(--surface-pale);
 }
 
 .about-image img {
@@ -640,8 +645,6 @@ p:last-child { margin-bottom: 0; }
 .benefit-card p {
   font-size: 0.92rem;
   color: var(--text-light);
-  text-align: justify;
-  text-align-last: left;
 }
 
 .benefit-card ul {
@@ -936,7 +939,7 @@ p:last-child { margin-bottom: 0; }
   font-family: var(--font-body);
   font-size: 0.95rem;
   color: var(--text);
-  background: var(--cream-light);
+  background: var(--surface-pale);
   transition: border-color 0.2s, box-shadow 0.2s;
 }
 
@@ -979,39 +982,9 @@ p:last-child { margin-bottom: 0; }
   border-bottom: 1px solid rgba(0,0,0,0.1);
 }
 
-.footer-brand .logo {
+.footer-brand .logo-lockup {
   color: var(--black);
   margin-bottom: 16px;
-}
-
-.footer-lockup {
-  align-items: center;
-  gap: 8px;
-  width: fit-content;
-  min-height: 64px;
-  padding: 6px 12px 6px 6px;
-  background: var(--white);
-}
-
-.footer-logo-mark {
-  width: 52px;
-  height: 52px;
-  flex: 0 0 52px;
-  object-fit: contain;
-}
-
-.footer-lockup .logo-type {
-  height: 52px;
-  align-items: center;
-  text-align: center;
-}
-
-.footer-lockup .logo-name {
-  font-size: 1.05rem;
-}
-
-.footer-lockup .logo-tagline {
-  font-size: 0.58rem;
 }
 
 .footer-brand p { font-size: 0.88rem; line-height: 1.7; max-width: 300px; }
@@ -1052,7 +1025,6 @@ p:last-child { margin-bottom: 0; }
   border-top: 1px solid rgba(0,0,0,0.08);
 }
 
-.text-center:not(p) { text-align: center; }
 .mt-4 { margin-top: 32px; }
 
 .section.note-section {
@@ -1142,7 +1114,7 @@ p:last-child { margin-bottom: 0; }
   max-width: var(--content);
   margin: 0 auto;
   padding: 32px 36px;
-  background: var(--cream);
+  background: var(--surface-pale);
 }
 .callout h4 {
   margin-bottom: 12px;
@@ -1185,11 +1157,11 @@ p:last-child { margin-bottom: 0; }
 @media (max-width: 1040px) {
   .header-inner { height: 72px; }
 
-  .brand-lockup {
+  .logo-lockup-header {
     min-width: 0;
   }
 
-  .brand-lockup .logo-type {
+  .logo-lockup-header .logo-type {
     position: absolute;
     top: 50%;
     left: 50%;

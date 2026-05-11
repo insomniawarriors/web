@@ -210,6 +210,9 @@ def parse_input_file(path: Path) -> dict[str, Any]:
 def parse_friendly_markdown(raw: str) -> dict[str, Any]:
     """Parse the editor-friendly Markdown format used by contents-codex.md."""
 
+    def section_key(title: str) -> str:
+        return re.sub(r"[^a-z0-9]+", "", title.lower())
+
     def section(title: str) -> str:
         pattern = rf"^## {re.escape(title)}\n(.*?)(?=^## |\Z)"
         match = re.search(pattern, raw, re.S | re.M)
@@ -218,7 +221,11 @@ def parse_friendly_markdown(raw: str) -> dict[str, Any]:
         return match.group(1).strip()
 
     def page(title: str) -> str:
-        return section(f"Page: {title}")
+        expected = section_key(title)
+        for match in re.finditer(r"^## Page:\s*(.+?)\n(.*?)(?=^## |\Z)", raw, re.S | re.M):
+            if section_key(match.group(1)) == expected:
+                return match.group(2).strip()
+        raise ValueError(f"Missing page: {title}")
 
     def subsection(block: str, title: str) -> str:
         pattern = rf"^### {re.escape(title)}\n(.*?)(?=^### |\Z)"
@@ -607,7 +614,7 @@ def head(page_key: str, page: dict[str, Any], site: dict[str, Any]) -> str:
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@500;700&family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css?v=20260510d">
+  <link rel="stylesheet" href="styles.css?v=20260510e">
   <script type="application/ld+json">
   {json.dumps(schema, indent=4, ensure_ascii=False)}
   </script>
@@ -756,7 +763,7 @@ def header(active: str, site: dict[str, Any]) -> str:
     return f"""  <!-- ====== HEADER ====== -->
   <header class="site-header" id="site-header">
     <div class="container header-inner">
-      <a href="index.html" class="logo brand-lockup" aria-label="{esc(site["logo_alt"])} home">
+      <a href="index.html" class="logo-lockup logo-lockup-header" aria-label="{esc(site["logo_alt"])} home">
         <img src="images/logo-cropped.png" alt="" class="logo-mark" aria-hidden="true">
         <span class="logo-type">
           <span class="logo-name">Insomnia Warriors</span>
@@ -781,8 +788,8 @@ def footer(site: dict[str, Any]) -> str:
     <div class="container">
       <div class="footer-grid">
         <div class="footer-brand">
-          <a href="index.html" class="logo footer-lockup" aria-label="{esc(site["logo_alt"])} home">
-            <img src="images/logo-cropped.png" alt="" class="footer-logo-mark" aria-hidden="true">
+          <a href="index.html" class="logo-lockup logo-lockup-footer" aria-label="{esc(site["logo_alt"])} home">
+            <img src="images/logo-cropped.png" alt="" class="logo-mark" aria-hidden="true">
             <span class="logo-type">
               <span class="logo-name">Insomnia Warriors</span>
               <span class="logo-tagline">Defeat insomnia</span>
@@ -885,7 +892,7 @@ def render_home(page: dict[str, Any], site: dict[str, Any]) -> str:
       <div class="hero-content">
         <h1>{text(hero["headline"])}</h1>
         <h3 class="hero-subtitle">{text(hero["subtitle"])}</h3>
-        <p class="subtitle">{text(hero["description"])}</p>
+        <p class="hero-copy">{text(hero["description"])}</p>
         <div class="hero-actions">
           {button(hero["primary_button"])}
           {button(hero["secondary_button"])}
@@ -940,7 +947,7 @@ def render_home(page: dict[str, Any], site: dict[str, Any]) -> str:
       <div class="symptoms-grid">
 {symptoms}
       </div>
-      <p class="text-center mt-4 section-footnote">{text(page["who_for"]["footnote"])}</p>
+      <p class="mt-4 section-footnote">{text(page["who_for"]["footnote"])}</p>
     </div>
   </section>
 
@@ -993,7 +1000,7 @@ def render_program(page: dict[str, Any], site: dict[str, Any]) -> str:
       <div class="benefits-grid">
 {components}
       </div>
-      <p class="text-center mt-4 section-footnote" style="font-size:0.95rem;">{text(page["components"]["footnote"])}</p>
+      <p class="mt-4 section-footnote" style="font-size:0.95rem;">{text(page["components"]["footnote"])}</p>
     </div>
   </section>
 

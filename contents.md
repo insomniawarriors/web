@@ -8,7 +8,7 @@
 
 - Home [Link: index.html]
 - The Program [Link: program.html]
-- Why OT driven CBT-I [Link: why-cbti.html]
+- Why OT-driven CBT-I [Link: why-cbti.html]
 - Meet The Team [Link: about.html]
 - Testimonials [Link: testimonials.html]
 - FAQs [Link: faqs.html]
@@ -21,7 +21,7 @@
 - Email: insomniawarriors@pm.me [Link: mailto:insomniawarriors@pm.me]
 - Phone: (253) 223-1751 [Link: tel:+12532231751]
 - Payment: HSA/FSA accepted · Superbills provided
-- Footer tagline: Clinically grounded OT driven CBT-I treatment for chronic insomnia. Reclaim restful sleep and a higher quality of life.
+- Footer tagline: Clinically grounded OT-driven CBT-I treatment for chronic insomnia. Reclaim restful sleep and a higher quality of life.
 - Copyright: 2026 Insomnia Warriors. All rights reserved.
 - Footer credential: Tierza Clerc, OTR/L, CBT-I
 - Disclaimer: This program is not a substitute for emergency medical care. If you are experiencing a medical emergency, please call 911.
@@ -34,7 +34,7 @@
 
 - Headline: Insomnia is a treatable condition
 - Subtitle: Without drugs, just behavioral therapy
-- Description: Occupational Therapy driven Cognitive Behavioral Therapy for Insomnia (CBT-I) is a program for individuals experiencing chronic insomnia and co-occurring conditions such as anxiety, PTSD, depression, chronic pain, and other medical contributors. This program provides a clinically guided pathway to restore natural sleep with the OT lens of the whole person as the focus.
+- Description: Occupational Therapy (OT) driven Cognitive Behavioral Therapy for Insomnia (CBT-I) is a program for individuals experiencing chronic insomnia and co-occurring conditions such as anxiety, PTSD, depression, chronic pain, and other medical contributors. This program provides a clinically guided pathway to restore natural sleep with the OT lens of the whole person as the focus.
 - Button 1: Schedule a Consultation [Link: contact.html]
 - Button 2: Learn About the Program [Link: program.html]
 
@@ -44,7 +44,7 @@
 - Credential logos: UW Medicine [Link: https://www.uwmedicine.org], Colorado State University [Link: https://www.colostate.edu]
 - Heading: Meet Tierza Clerc
 - Subtitle: A therapist who has walked the same path to better sleep
-- Bio: With 26 years of clinical experience, Tierza combines the lens of an occupational therapist with evidence-based CBT-I with a compassionate, human-centered approach. She has personally experienced the program's life-changing results — and is dedicated to helping others do the same.
+- Bio: With 26 years of clinical experience, Tierza combines an occupational therapy lens, evidence-based CBT-I, and a compassionate, human-centered approach. She has personally experienced the program's life-changing results — and is dedicated to helping others do the same.
 - Button: Learn More About Tierza [Link: about.html]
 
 ### Stat Bar
@@ -56,14 +56,14 @@
 
 - Section label: Is This You?
 - Heading: Who This Program Is For
-- Description: You may be a candidate for this OT driven CBT-I treatment program if any of these describe your experience.
+- Description: You may be a candidate for this OT-driven CBT-I treatment program if any of these describe your experience.
 - Symptom 1: You lie awake for hours despite being tired or exhausted
 - Symptom 2: You wake frequently during the night and cannot fall back asleep
 - Symptom 3: You wake for the day much earlier than you want
 - Symptom 4: Your mind becomes alert or anxious at bedtime
 - Symptom 5: You feel foggy, depleted, or that you don't function well in the daytime
 - Symptom 6: You've tried sleep hygiene, supplements, or apps without lasting improvement
-- Footnote: You want a structured, clinically validated method that focuses on you the whole person— not another short-term fix.
+- Footnote: You want a structured, clinically validated method that focuses on you as a whole person — not another short-term fix.
 
 ### Why This Works
 
@@ -84,7 +84,7 @@
 ### Call to Action
 
 - Heading: Take the First Step Toward Better Sleep
-- Text: A short conversation is all it takes to find out if OT driven CBT-I is right for you.
+- Text: A short conversation is all it takes to find out if OT-driven CBT-I is right for you.
 - Button: Get Started [Link: contact.html]
 
 ---
@@ -93,7 +93,7 @@
 
 ### Page Header
 
-- Section label: Clinical OT driven CBT-I Treatment
+- Section label: Clinical OT-driven CBT-I Treatment
 - Heading: The Program
 - Subtitle: A clinically guided pathway to restoring natural, restorative sleep
 
@@ -107,7 +107,7 @@
 - Component 2 title: CBT-I Treatment Protocol
 - Component 2 text: A stepwise, evidence-based intervention including stimulus control, sleep scheduling, cognitive reframing (building healthier sleep thinking patterns and shifting thoughts that keep you awake), and behavioral modification.
 - Component 3 title: Co-Occurring Condition Integration
-- Component 3 text: Treatment is adapted for individuals with anxiety, PTSD, depression, chronic pain, hormonal changes, long COVID, and other medical contributors. Collaboration with your therapist, psychiatrist, or physician is integrated for most individuals. Additionally, all areas your insomnia is impacting your life are collaboratively explored to ensure your sleep routine and life style are captured.
+- Component 3 text: Treatment is adapted for individuals with anxiety, PTSD, depression, chronic pain, hormonal changes, long COVID, and other medical contributors. Collaboration with your therapist, psychiatrist, or physician is integrated for most individuals. Additionally, all areas your insomnia is impacting your life are collaboratively explored to ensure your sleep routine and lifestyle are captured.
 - Footnote: This is not coaching. It is a clinical protocol requiring commitment, adherence, and ongoing evaluation. Most individuals participate in a minimum of seven sessions. Many require longer programs depending on the complexity of their insomnia, how their body responds to the therapy, and related co-occurring conditions.
 
 ### How The Program Works
@@ -121,7 +121,7 @@
 - Step 3 title: Receive a Clinical Treatment Plan
 - Step 3 text: Your provider identifies the mechanisms driving your insomnia and outlines a structured CBT-I-based protocol tailored to your unique situation and your unique life.
 - Step 4 title: Engage in Weekly Treatment Sessions
-- Step 4 text: Sessions include progress review, data-driven adjustments, and integration of strategies for anxiety, trauma, or medical contributors. The average session commitment is 7–11 sessions. Must have 7 days of sleep diaries for your next visit to be scheduled.
+- Step 4 text: Sessions include progress review, data-driven adjustments, and integration of strategies for anxiety, trauma, or medical contributors. The average session commitment is 7–11 sessions. Your next visit is scheduled after seven days of completed sleep diaries.
 - Step 5 title: Achieve Sustainable, Natural Sleep
 - Step 5 text: With adherence, most individuals experience measurable improvements in sleep efficiency, nighttime awakenings, and confidence in their ability to sleep.
 
@@ -140,7 +140,7 @@
 
 ---
 
-## Page: Why OT driven CBT-I
+## Page: Why OT-driven CBT-I
 
 ### Page Header
 
@@ -169,26 +169,26 @@
 - Card 5 title: Improves Overall Well-Being
 - Card 5 text: Beyond sleep, CBT-I can also improve: mood (anxiety and depression), energy and focus, quality of life.
 
-- ### What makes Occupational Therapy driven CBT-I different?
+- ### What makes Occupational Therapy-driven CBT-I different?
 
 - Section Label: Whole person focus
-- Heading: What makes Occupational Therapy driven CBT-I different. 
-- Description: The field of OT focuses on all aspects of someone's life. CBT-I delivered by psychiatrists often includes both medications and the CBT-I therapy. OT driven CBT-I is a non-pharmacological program.
+- Heading: What makes OT-driven CBT-I different
+- Description: The field of Occupational Therapy (OT) focuses on all aspects of someone's life. CBT-I in psychiatric settings may include medication management alongside therapy. OT-driven CBT-I emphasizes non-pharmacological, behavior-based treatment.
 
 - Card 1 title: Core Focus
-- Card 1 text: Centers on daily life structure and function- how sleep fits into routines, roles, environments. Insomnia is treated as a disruption in occupations (sleep, work, self-care, leisure). Emphasizes rebuilding sustainable habits and rhythms.
+- Card 1 text: Centers on daily life structure and function: how sleep fits into routines, roles, environments. Insomnia is treated as a disruption in occupations (sleep, work, self-care, leisure). Emphasizes rebuilding sustainable habits and rhythms.
 
 - Card 2 title: Intervention Style
 - Card 2 text: Highly contextual and hands-on: redesigning bedtime routines, modifying the sleep environment, aligning sleep with daytime activity patterns, behavioral tools that are tied to real-life performance (work schedules or caregiving demands).
 
 - Card 3 title: View of the Patient
-- card 3 text: Sees you as a whole system interacting with your environment. Your provider puts a strong emphasis on your life's functions, independence, and quality of life. Tailors your therapy to real-world barriors (shift work, parenting, or disabilities)
+- card 3 text: Sees you as a whole system interacting with your environment. Your provider puts a strong emphasis on your life's functions, independence, and quality of life. Tailors your therapy to real-world barriers (shift work, parenting, or disabilities)
 
 - Card 4 title: Use of Medication
-- Card 4 text: Non-pharmacological. The focus is on behavioral and environmental changes- allowing you to directly control your sleep, not be dependent on medications to achieve restful and restorative sleep.
+- Card 4 text: Non-pharmacological. The focus is on behavioral and environmental changes, allowing you to directly control your sleep, not be dependent on medications to achieve restful and restorative sleep.
 
 - Card 5 title: Session Experience
-- Card 5 text: Feels more like coaching and lifestyle redesign while still being clinical therapy. Which includes: activity logs beyond merely sleep (food consumption, naps, medications, caffeine intake), habit training and environmental adjustments, collaborative function-oriented sessions with your provider. 
+- Card 5 text: Feels more like coaching and lifestyle redesign while still being clinical therapy. This includes: activity logs beyond merely sleep (food consumption, naps, medications, caffeine intake), habit training and environmental adjustments, collaborative function-oriented sessions with your provider. 
 
 ### CBT-I vs. Medication Comparison
 
@@ -203,7 +203,7 @@
 ### Call to Action
 
 - Heading: Ready to Try the Gold Standard?
-- Text: You've seen the evidence. Let's discuss how OT driven CBT-I applies to your situation.
+- Text: You've seen the evidence. Let's discuss how OT-driven CBT-I applies to your situation.
 - Button: Contact us for your first Consultation [Link: contact.html]
 
 ---
@@ -230,8 +230,8 @@
 
 - Section label: Approach
 - Heading: Why The Team Does This Work
-- Paragraph 1: The providers at Insomnia Warriors knows firsthand how insomnia can affect every part of your life — your energy, your mood, your relationships, and your ability to function during the day. Everyone on this team has struggled with it themselves before discovering OT-driven CBT-I.
-- Paragraph 2: That personal experience, combined with decades of clinical work, gives us a unique perspective. We don't just understand the science behind CBT-I — we understands what it feels like to lie awake at night wondering if anything will ever work.
+- Paragraph 1: The providers at Insomnia Warriors know firsthand how insomnia can affect every part of your life — your energy, your mood, your relationships, and your ability to function during the day. Everyone on this team has struggled with it themselves before discovering OT-driven CBT-I.
+- Paragraph 2: That personal experience, combined with decades of clinical work, gives us a unique perspective. We don't just understand the science behind CBT-I — we understand what it feels like to lie awake at night wondering if anything will ever work.
 - Paragraph 3: Our approach is structured and evidence-based, but always delivered with compassion, patience, and without judgment. Every person's insomnia is different, and your provider will tailor your treatment to your specific needs and circumstances.
 
 ### Call to Action
@@ -305,11 +305,11 @@ All visits are Telehealth through a medically and HIPAA secure platform.
 
 ### Question: How long are sessions?
 
-Sessions are typically 60 minutes in length. Towards the end of the program, it may be possible to have visits as short as 15-20 minutes.
+Sessions are typically 60 minutes in length. Towards the end of the program, it may be possible to have visits as short as 15–20 minutes.
 
 ### Question: What is the cost?
 
-Prices are $80 for 10-30 minute sessions and $150 for 31-60 minute sessions. 
+Prices are $80 for 10–30 minute sessions and $150 for 31–60 minute sessions. 
 
 ### Question: How long does treatment take?
 
@@ -339,7 +339,7 @@ When we are missing a component of your insomnia, we will plateau and your sleep
 
 ### Question: Do you work with people who take sleep medication?
 
-A close coordination with medical providers will be critical if you are taking sleep medications to determine if the sleep medication is for sleep only or for treating an underlying medical condition. If the medications are for sleeping only, we will work with your therapist, psychiatrist, or physician to wean you off your sleep medications so that your sleep is achieved through natural body processes. You will learn how to do this through this program.
+Close coordination with medical providers may be important if you are taking sleep medications to determine whether the medication is for sleep only or for treating an underlying medical condition. If the medications are for sleep only, we will work with your therapist, psychiatrist, or physician to wean you off sleep medications so that your sleep is achieved through natural body processes. You will learn how to do this through this program.
 
 ### Question: What if I have tried everything?
 
@@ -351,7 +351,7 @@ If someone doesn't qualify for the program, the team can make general recommenda
 
 ### Question: Is Tierza Clerc licensed? How about everyone else on the team?
 
-Yes, Tierza has a Washington State Occupational Therapy license and a license with American Occupational Therapy Association. Yes, any employee of Insomnia Warriors has their applicable state license and their AOTA license in good standing.
+Yes, Tierza holds a Washington State Occupational Therapy license. Any Insomnia Warriors clinician maintains applicable state licensure in good standing.
 
 ### Call to Action
 

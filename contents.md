@@ -44,7 +44,7 @@
 - Credential logos: UW Medicine [Link: https://www.uwmedicine.org], Colorado State University [Link: https://www.colostate.edu]
 - Heading: Meet Tierza Clerc
 - Subtitle: A therapist who has walked the same path to better sleep
-- Bio: With 26 years of clinical experience, Tierza combines an occupational therapy lens, evidence-based CBT-I, and a compassionate, human-centered approach. She has personally experienced the program's life-changing results — and is dedicated to helping others do the same.
+- Bio: With 26 years of clinical experience, Tierza combines an occupational therapy lens, evidence-based CBT-I, and a compassionate, human-centered approach. She has personally experienced the program's life-changing results — and is dedicated to helping others do the same. She is the first Occupational Therapist credentialed in CBT-I in the state of Washington.
 - Button: Learn More About Tierza [Link: about.html]
 
 ### Stat Bar
@@ -221,7 +221,7 @@
 - Credential tag: OTR/L · CBT-I Certified
 - Credential logos: UW Medicine [Link: https://www.uwmedicine.org], Colorado State University [Link: https://www.colostate.edu]
 - Heading: 26 Years of Clinical Experience
-- Paragraph 1: Tierza Clerc has been in the medical field for 26 years — initially in medical massage for 23 years, helping people after surgeries, injuries, or trauma, and now 3 years in occupational therapy.
+- Paragraph 1: Tierza Clerc has been in the medical field for 26 years — initially in medical massage for 23 years, helping people after surgeries, injuries, or trauma, and now 3 years in occupational therapy. She is the first Occupational Therapist to be credentialed in CBT-I in the state of Washington.
 - Paragraph 2: Upon taking the OT-driven CBT-I program as a practitioner, Tierza experienced an evidence-based, occupational therapy-driven intervention for chronic insomnia which led to managing her own insomnia towards significantly better sleep.
 - Paragraph 3: The program uses Cognitive Behavioral Therapy for Insomnia (CBT-I) to improve sleep quality and daily functioning. Occupational therapy as a profession is perfectly positioned to help in the occupation of sleep.
 - Paragraph 4: She is dedicated to sharing this program so others can reclaim restful sleep and a higher quality of life.

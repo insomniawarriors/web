@@ -21,7 +21,7 @@
 - Email: insomniawarriors@pm.me [Link: mailto:insomniawarriors@pm.me]
 - Phone: (253) 223-1751 [Link: tel:+12532231751]
 - Payment: HSA/FSA accepted · Superbills provided
-- Footer tagline: Clinically grounded OT-driven CBT-I treatment for chronic insomnia. Reclaim restful sleep and a higher quality of life.
+- Footer tagline: Clinically grounded OT-driven CBT-I treatment for chronic insomnia. Reclaim restful sleep and a higher quality of life. Telehealth CBT-I sessions are available for clients in Seattle and throughout Washington State.
 - Copyright: 2026 Insomnia Warriors. All rights reserved.
 - Footer credential: Tierza Clerc, OTR/L, CBT-I
 - Disclaimer: This program is not a substitute for emergency medical care. If you are experiencing a medical emergency, please call 911.

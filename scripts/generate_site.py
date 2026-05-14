@@ -326,7 +326,9 @@ def parse_friendly_markdown(raw: str) -> dict[str, Any]:
         "site": {
             "name": "Insomnia Warriors",
             "base_url": "https://www.insomniawarriors.com/",
-            "og_image": "https://www.insomniawarriors.com/images/logo.png",
+            "og_image": "https://www.insomniawarriors.com/images/social-preview.png",
+            "og_image_alt": "Insomnia Warriors logo with the tagline Defeat insomnia",
+            "logo_schema": "https://www.insomniawarriors.com/images/logo-wide.png",
             "logo_image": "images/logo.png",
             "logo_alt": "Insomnia Warriors",
             "provider_name": "Tierza Clerc",
@@ -598,6 +600,9 @@ def head(page_key: str, page: dict[str, Any], site: dict[str, Any]) -> str:
   <meta property="og:title" content="{esc(meta.get("og_title", meta["title"]))}">
   <meta property="og:description" content="{esc(meta.get("og_description", meta["description"]))}">
   <meta property="og:image" content="{esc(site["og_image"])}">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="{esc(site["og_image_alt"])}">
   <meta property="og:url" content="{esc(url)}">
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="{esc(site["name"])}">
@@ -605,6 +610,7 @@ def head(page_key: str, page: dict[str, Any], site: dict[str, Any]) -> str:
   <meta name="twitter:title" content="{esc(meta.get("og_title", meta["title"]))}">
   <meta name="twitter:description" content="{esc(meta.get("og_description", meta["description"]))}">
   <meta name="twitter:image" content="{esc(site["og_image"])}">
+  <meta name="twitter:image:alt" content="{esc(site["og_image_alt"])}">
   <link rel="icon" type="image/png" sizes="32x32" href="images/favicons/favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="images/favicons/favicon-16x16.png">
   <link rel="icon" href="images/favicons/favicon.ico" sizes="any">
@@ -630,7 +636,7 @@ def schema_for(page_key: str, page: dict[str, Any], site: dict[str, Any], url: s
             "name": site["name"],
             "description": "Clinically grounded CBT-I (Cognitive Behavioral Therapy for Insomnia) treatment program for chronic insomnia. Led by Tierza Clerc, OTR/L, CBT-I — 26 years of clinical experience.",
             "url": site["base_url"],
-            "logo": site["og_image"],
+            "logo": site["logo_schema"],
             "image": f'{site["base_url"]}images/tierza-clerc.png',
             "email": contact["email"],
             "telephone": contact["phone_schema"],

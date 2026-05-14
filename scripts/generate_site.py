@@ -31,39 +31,14 @@ PAGE_FILES = {
     "contact": "contact.html",
 }
 
-META_DEFAULTS = {
-    "home": {
-        "title": "Insomnia Warriors — Clinical CBT-I Program for Chronic Insomnia",
-        "description": "Insomnia Warriors delivers a clinically grounded CBT-I program to help you reclaim restful sleep. Led by Tierza Clerc, OTR/L, CBT-I — 26 years of clinical experience.",
-        "og_title": "Insomnia Warriors — Clinical CBT-I Program for Chronic Insomnia",
-        "og_description": "Clinically grounded CBT-I treatment for chronic insomnia. Led by Tierza Clerc, OTR/L — 26 years of clinical experience.",
-    },
-    "program": {
-        "title": "The Program — Insomnia Warriors",
-        "description": "A clinically grounded, multi-component CBT-I treatment program for chronic insomnia. Learn about our structured approach to restoring natural sleep.",
-    },
-    "why_cbti": {
-        "title": "Why CBT-I — Insomnia Warriors",
-        "description": "CBT-I is the gold standard treatment for chronic insomnia. Learn why it works better than medication — with lasting results and no side effects.",
-    },
-    "about": {
-        "title": "Meet Tierza Clerc — Insomnia Warriors",
-        "description": "Meet Tierza Clerc, OTR/L, CBT-I — a therapist with 26 years of clinical experience who has walked the same path to better sleep.",
-    },
-    "testimonials": {
-        "title": "Testimonials — Insomnia Warriors",
-        "description": "Real cases, measurable improvement, restored sleep. Read what clients say about their CBT-I treatment experience with Insomnia Warriors.",
-        "og_description": "Real cases, measurable improvement, restored sleep. Read what clients say about their CBT-I treatment experience.",
-    },
-    "faqs": {
-        "title": "FAQs — Insomnia Warriors",
-        "description": "Common questions about CBT-I treatment, session structure, insurance, sleep diaries, and what to expect from the Insomnia Warriors program.",
-        "og_description": "Common questions about CBT-I treatment, session structure, insurance, sleep diaries, and what to expect from the program.",
-    },
-    "contact": {
-        "title": "Contact — Insomnia Warriors",
-        "description": "Get started with CBT-I treatment. Contact Insomnia Warriors to schedule a consultation and take the first step toward better sleep.",
-    },
+SEO_PAGE_LABELS = {
+    "home": "Home",
+    "program": "Program",
+    "why_cbti": "Why CBT-I",
+    "about": "About",
+    "testimonials": "Testimonials",
+    "faqs": "FAQs",
+    "contact": "Contact",
 }
 
 ICON_DEFAULTS = {
@@ -297,6 +272,20 @@ def parse_friendly_markdown(raw: str) -> dict[str, Any]:
         values = bullets(subsection(block, "Call to Action"))
         return {"heading": values["Heading"], "text": values["Text"], "button": button_value(values["Button"])}
 
+    def meta_for(seo_values: dict[str, str], page_key: str) -> dict[str, str]:
+        label = SEO_PAGE_LABELS[page_key]
+        meta = {
+            "title": seo_values[f"{label} title"],
+            "description": seo_values[f"{label} description"],
+        }
+        social_title = seo_values.get(f"{label} social title")
+        social_description = seo_values.get(f"{label} social description")
+        if social_title:
+            meta["og_title"] = social_title
+        if social_description:
+            meta["og_description"] = social_description
+        return meta
+
     header_lines = [line for line in section("Header (appears on every page)").splitlines() if line.strip().startswith("- ")]
     nav_key_by_url = {
         "index.html": "home",
@@ -319,6 +308,7 @@ def parse_friendly_markdown(raw: str) -> dict[str, Any]:
         nav.append(item)
 
     contact_values = bullets(section("Contact Info (used across all pages)"))
+    seo_values = bullets(section("SEO Metadata"))
     email_label, email_href = link_value(contact_values["Email"])
     phone_label, phone_href = link_value(contact_values["Phone"])
 
@@ -326,13 +316,20 @@ def parse_friendly_markdown(raw: str) -> dict[str, Any]:
         "site": {
             "name": "Insomnia Warriors",
             "base_url": "https://www.insomniawarriors.com/",
-            "og_image": "https://www.insomniawarriors.com/images/social-preview.png",
-            "og_image_alt": "Insomnia Warriors logo with the tagline Defeat insomnia",
-            "logo_schema": "https://www.insomniawarriors.com/images/logo-wide.png",
+            "og_image": seo_values["Social image"],
+            "og_image_alt": seo_values["Social image alt"],
+            "logo_schema": seo_values["Schema logo"],
             "logo_image": "images/logo.png",
             "logo_alt": "Insomnia Warriors",
             "provider_name": "Tierza Clerc",
-            "provider_schema_description": "26 years of clinical experience in medical massage and occupational therapy. CBT-I certified.",
+            "schema_descriptions": {
+                "business": seo_values["Business schema description"],
+                "provider": seo_values["Provider schema description"],
+                "program": seo_values["Program schema description"],
+                "program_study": seo_values["Program study description"],
+                "cbti": seo_values["CBT-I schema description"],
+                "about": seo_values["About schema description"],
+            },
             "contact": {
                 "email": email_label,
                 "phone_display": phone_label,
@@ -362,7 +359,7 @@ def parse_friendly_markdown(raw: str) -> dict[str, Any]:
     who_values = bullets(subsection(block, "Who This Program Is For"))
     why_values = bullets(subsection(block, "Why This Works"))
     data["pages"]["home"] = {
-        "meta": META_DEFAULTS["home"],
+        "meta": meta_for(seo_values, "home"),
         "hero": {
             "headline": hero["Headline"],
             "subtitle": hero["Subtitle"],
@@ -404,7 +401,7 @@ def parse_friendly_markdown(raw: str) -> dict[str, Any]:
     steps = bullets(subsection(block, "How The Program Works"))
     note = bullets(subsection(block, "Note About Underlying Conditions"))
     data["pages"]["program"] = {
-        "meta": META_DEFAULTS["program"],
+        "meta": meta_for(seo_values, "program"),
         "page_header": page_header(block),
         "components": {
             "label": components["Section label"],
@@ -446,7 +443,7 @@ def parse_friendly_markdown(raw: str) -> dict[str, Any]:
             parts = [part.strip() for part in line.strip("|").split("|")]
             comparison.append({"factor": parts[0]})
     why_cbti_data: dict[str, Any] = {
-        "meta": META_DEFAULTS["why_cbti"],
+        "meta": meta_for(seo_values, "why_cbti"),
         "page_header": page_header(block),
         "root_cause": {
             "label": root_cause["Section label"],
@@ -487,7 +484,7 @@ def parse_friendly_markdown(raw: str) -> dict[str, Any]:
     bio = bullets(subsection(block, "Bio"))
     philosophy = bullets(subsection(block, "Why The Team Does This Work"))
     data["pages"]["about"] = {
-        "meta": META_DEFAULTS["about"],
+        "meta": meta_for(seo_values, "about"),
         "page_header": page_header(block),
         "bio": {**SHARED_ABOUT_IMAGES, "credential_tag": bio["Credential tag"], "heading": bio["Heading"], "paragraphs": paragraphs_from_values(bio)},
         "philosophy": {"label": philosophy["Section label"], "heading": philosophy["Heading"], "paragraphs": paragraphs_from_values(philosophy)},
@@ -512,7 +509,7 @@ def parse_friendly_markdown(raw: str) -> dict[str, Any]:
     social_text = bullets(subsection(block, "Social Proof"))["Text"]
     strong, social = social_text.split(" — ", 1)
     data["pages"]["testimonials"] = {
-        "meta": META_DEFAULTS["testimonials"],
+        "meta": meta_for(seo_values, "testimonials"),
         "page_header": page_header(block),
         "testimonials": testimonial_items,
         "social_proof": {"strong": strong, "text": social},
@@ -524,7 +521,7 @@ def parse_friendly_markdown(raw: str) -> dict[str, Any]:
     block = page("FAQs")
     question_matches = re.findall(r"^### Question(?: \d+)?: (.*?)\n\n(.*?)(?=^### Question(?: \d+)?:|^### Call to Action|\Z)", block, re.S | re.M)
     data["pages"]["faqs"] = {
-        "meta": META_DEFAULTS["faqs"],
+        "meta": meta_for(seo_values, "faqs"),
         "page_header": page_header(block),
         "questions": [{"question": q.strip(), "answer": a.strip()} for q, a in question_matches],
         "cta": cta_block(block),
@@ -537,7 +534,7 @@ def parse_friendly_markdown(raw: str) -> dict[str, Any]:
     confirmation = bullets(subsection(block, "After Submission"))
     fallback_text, _ = link_value(confirmation["Fallback"])
     data["pages"]["contact"] = {
-        "meta": META_DEFAULTS["contact"],
+        "meta": meta_for(seo_values, "contact"),
         "page_header": page_header(block),
         "reach_out": {"heading": reach["Heading"], "description": reach["Description"]},
         "expect": {"heading": "What to Expect", "text": subsection(block, "What to Expect").strip()},
@@ -629,12 +626,13 @@ def head(page_key: str, page: dict[str, Any], site: dict[str, Any]) -> str:
 
 def schema_for(page_key: str, page: dict[str, Any], site: dict[str, Any], url: str) -> dict[str, Any]:
     contact = site["contact"]
+    schema_descriptions = site["schema_descriptions"]
     if page_key == "home":
         return {
             "@context": "https://schema.org",
             "@type": "MedicalBusiness",
             "name": site["name"],
-            "description": "Clinically grounded CBT-I (Cognitive Behavioral Therapy for Insomnia) treatment program for chronic insomnia. Led by Tierza Clerc, OTR/L, CBT-I — 26 years of clinical experience.",
+            "description": schema_descriptions["business"],
             "url": site["base_url"],
             "logo": site["logo_schema"],
             "image": f'{site["base_url"]}images/tierza-clerc.png',
@@ -644,7 +642,7 @@ def schema_for(page_key: str, page: dict[str, Any], site: dict[str, Any], url: s
                 "@type": "Person",
                 "name": site["provider_name"],
                 "jobTitle": "Occupational Therapist & CBT-I Provider",
-                "description": site["provider_schema_description"],
+                "description": schema_descriptions["provider"],
                 "credential": [
                     {"@type": "EducationalOccupationalCredential", "credentialCategory": "OTR/L"},
                     {"@type": "EducationalOccupationalCredential", "credentialCategory": "CBT-I Certified"},
@@ -662,7 +660,7 @@ def schema_for(page_key: str, page: dict[str, Any], site: dict[str, Any], url: s
                     {
                         "@type": "MedicalTherapy",
                         "name": "Cognitive Behavioral Therapy for Insomnia (CBT-I)",
-                        "description": "A 7-11 session evidence-based treatment program for chronic insomnia, addressing co-occurring conditions such as anxiety, PTSD, depression, and chronic pain.",
+                        "description": schema_descriptions["program"],
                         "relevantSpecialty": "Occupational Therapy",
                     }
                 ],
@@ -675,13 +673,13 @@ def schema_for(page_key: str, page: dict[str, Any], site: dict[str, Any], url: s
             "@context": "https://schema.org",
             "@type": "MedicalTherapy",
             "name": "CBT-I Treatment Program — Insomnia Warriors",
-            "description": "A clinically grounded, multi-component CBT-I treatment program for chronic insomnia. Includes clinical assessment, sleep diaries, personalized treatment plans, weekly sessions, and co-occurring condition integration.",
+            "description": schema_descriptions["program"],
             "url": url,
             "medicineSystem": "EvidenceBased",
             "relevantSpecialty": "Occupational Therapy",
             "study": {
                 "@type": "MedicalStudy",
-                "description": "CBT-I has a 95% success rate among individuals who adhere to and complete the program.",
+                "description": schema_descriptions["program_study"],
             },
             "provider": {"@type": "MedicalBusiness", "name": site["name"], "url": site["base_url"]},
         }
@@ -695,7 +693,7 @@ def schema_for(page_key: str, page: dict[str, Any], site: dict[str, Any], url: s
             "about": {
                 "@type": "MedicalTherapy",
                 "name": "Cognitive Behavioral Therapy for Insomnia (CBT-I)",
-                "description": "An evidence-based therapy that treats the root cause of insomnia through sleep scheduling, stimulus control, cognitive restructuring, and relaxation techniques. Unlike sleep medication, CBT-I produces long-lasting results with no side effects or dependency risk.",
+                "description": schema_descriptions["cbti"],
                 "medicineSystem": "EvidenceBased",
             },
         }
@@ -705,7 +703,7 @@ def schema_for(page_key: str, page: dict[str, Any], site: dict[str, Any], url: s
             "@type": "Person",
             "name": site["provider_name"],
             "jobTitle": "Occupational Therapist & CBT-I Provider",
-            "description": "Tierza Clerc has been in the medical field for 26 years — initially in medical massage for 23 years and now 3 years in occupational therapy. She is CBT-I certified and dedicated to helping people reclaim restful sleep.",
+            "description": schema_descriptions["about"],
             "image": f'{site["base_url"]}images/tierza-clerc.png',
             "url": url,
             "worksFor": {"@type": "MedicalBusiness", "name": site["name"], "url": site["base_url"]},

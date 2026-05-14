@@ -28,13 +28,45 @@
 
 ---
 
+## SEO Metadata
+
+- Social image: https://www.insomniawarriors.com/images/social-preview.png
+- Social image alt: Insomnia Warriors logo with the tagline Defeat insomnia
+- Schema logo: https://www.insomniawarriors.com/images/logo-wide.png
+- Business schema description: Clinically grounded CBT-I (Cognitive Behavioral Therapy for Insomnia) treatment program for chronic insomnia. Led by Tierza Clerc, OTR/L, CBT-I — 26 years of clinical experience.
+- Provider schema description: 26 years of clinical experience in medical massage and occupational therapy. CBT-I certified.
+- Program schema description: A clinically grounded, multi-component CBT-I treatment program for chronic insomnia. Includes clinical assessment, sleep diaries, personalized treatment plans, weekly sessions, and co-occurring condition integration.
+- Program study description: CBT-I has a 95% success rate among individuals who adhere to and complete the program.
+- CBT-I schema description: An evidence-based therapy that treats the root cause of insomnia through sleep scheduling, stimulus control, cognitive restructuring, and relaxation techniques. Unlike sleep medication, CBT-I produces long-lasting results with no side effects or dependency risk.
+- About schema description: Tierza Clerc has been in the medical field for 26 years — initially in medical massage for 23 years and now 3 years in occupational therapy. She is CBT-I certified and dedicated to helping people reclaim restful sleep.
+- Home title: Insomnia Warriors — Clinical CBT-I Program for Chronic Insomnia
+- Home description: Insomnia Warriors delivers a clinically grounded CBT-I program to help you reclaim restful sleep. Led by Tierza Clerc, OTR/L, CBT-I — 26 years of clinical experience.
+- Home social title: Insomnia Warriors — Clinical CBT-I Program for Chronic Insomnia
+- Home social description: Clinically grounded CBT-I treatment for chronic insomnia. Led by Tierza Clerc, OTR/L — 26 years of clinical experience.
+- Program title: The Program — Insomnia Warriors
+- Program description: A clinically grounded, multi-component CBT-I treatment program for chronic insomnia. Learn about our structured approach to restoring natural sleep.
+- Why CBT-I title: Why CBT-I — Insomnia Warriors
+- Why CBT-I description: CBT-I is the gold standard treatment for chronic insomnia. Learn why it works better than medication — with lasting results and no side effects.
+- About title: Meet Tierza Clerc — Insomnia Warriors
+- About description: Meet Tierza Clerc, OTR/L, CBT-I — a therapist with 26 years of clinical experience who has walked the same path to better sleep.
+- Testimonials title: Testimonials — Insomnia Warriors
+- Testimonials description: Real cases, measurable improvement, restored sleep. Read what clients say about their CBT-I treatment experience with Insomnia Warriors.
+- Testimonials social description: Real cases, measurable improvement, restored sleep. Read what clients say about their CBT-I treatment experience.
+- FAQs title: FAQs — Insomnia Warriors
+- FAQs description: Common questions about CBT-I treatment, session structure, insurance, sleep diaries, and what to expect from the Insomnia Warriors program.
+- FAQs social description: Common questions about CBT-I treatment, session structure, insurance, sleep diaries, and what to expect from the program.
+- Contact title: Contact — Insomnia Warriors
+- Contact description: Get started with CBT-I treatment. Contact Insomnia Warriors to schedule a consultation and take the first step toward better sleep.
+
+---
+
 ## Page: Home
 
 ### Hero
 
 - Headline: Insomnia is a treatable condition
 - Subtitle: Without drugs, just behavioral therapy
-- Description: Occupational Therapy (OT) driven Cognitive Behavioral Therapy for Insomnia (CBT-I) is a program for individuals experiencing chronic insomnia and co-occurring conditions such as anxiety, PTSD, depression, chronic pain, and other medical contributors. This program provides a clinically guided pathway to restore natural sleep with the OT lens of the whole person as the focus.
+- Description: Occupational Therapy (OT) driven Cognitive Behavioral Therapy for Insomnia (CBT-I) is a program for individuals experiencing chronic insomnia and co-occurring conditions such as anxiety, PTSD, depression, chronic pain, and other medical contributors. Insomnia Warriors provides a clinically guided pathway to restore natural sleep with the OT lens of the whole person as the focus. We provide telehealth for clients in Seattle and throughout Washington state. 
 - Button 1: Schedule a Consultation [Link: contact.html]
 - Button 2: Learn About the Program [Link: program.html]
 

@@ -327,7 +327,7 @@ def parse_friendly_markdown(raw: str) -> dict[str, Any]:
                 "provider": seo_values["Provider schema description"],
                 "program": seo_values["Program schema description"],
                 "program_study": seo_values["Program study description"],
-                "cbti": seo_values["CBT-I schema description"],
+                "ot_driven_cbti": seo_values["OT-driven CBT-I schema description"],
                 "about": seo_values["About schema description"],
             },
             "contact": {
@@ -693,7 +693,7 @@ def schema_for(page_key: str, page: dict[str, Any], site: dict[str, Any], url: s
             "about": {
                 "@type": "MedicalTherapy",
                 "name": "Cognitive Behavioral Therapy for Insomnia (CBT-I)",
-                "description": schema_descriptions["cbti"],
+                "description": schema_descriptions["ot_driven_cbti"],
                 "medicineSystem": "EvidenceBased",
             },
         }

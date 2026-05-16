@@ -32,6 +32,11 @@
 
 - Social image: https://www.insomniawarriors.com/images/social-preview.png
 - Social image alt: Insomnia Warriors logo with the tagline Defeat insomnia
+- Provider image: https://www.insomniawarriors.com/images/tierza-clerc-ot-driven-cbti-seattle.png
+- Provider image local: images/tierza-clerc-ot-driven-cbti-seattle.png
+- Provider image alt: Tierza Clerc, OTR/L, CBT-I, Occupational Therapist providing CBT-I telehealth in Washington State
+- Provider image width: 1092
+- Provider image height: 1441
 - Schema logo: https://www.insomniawarriors.com/images/logo-wide.png
 - Business schema description: OT-driven CBT-I (Occupational Therapy driven Cognitive Behavioral Therapy for Insomnia) treatment program for chronic insomnia. Led by Tierza Clerc, OTR/L, CBT-I, the first OT credentialed in CBT-I in Washington State with 26 years of clinical experience.
 - Provider schema description: 26 years of clinical experience in occupational therapy and medical massage. CBT-I certified.

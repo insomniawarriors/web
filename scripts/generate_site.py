@@ -284,6 +284,11 @@ def parse_friendly_markdown(raw: str) -> dict[str, Any]:
             meta["og_title"] = social_title
         if social_description:
             meta["og_description"] = social_description
+        if page_key == "about":
+            meta["og_image"] = seo_values["Provider image"]
+            meta["og_image_alt"] = seo_values["Provider image alt"]
+            meta["og_image_width"] = seo_values["Provider image width"]
+            meta["og_image_height"] = seo_values["Provider image height"]
         return meta
 
     header_lines = [line for line in section("Header (appears on every page)").splitlines() if line.strip().startswith("- ")]
@@ -318,6 +323,9 @@ def parse_friendly_markdown(raw: str) -> dict[str, Any]:
             "base_url": "https://www.insomniawarriors.com/",
             "og_image": seo_values["Social image"],
             "og_image_alt": seo_values["Social image alt"],
+            "provider_image": seo_values["Provider image"],
+            "provider_image_local": seo_values["Provider image local"],
+            "provider_image_alt": seo_values["Provider image alt"],
             "logo_schema": seo_values["Schema logo"],
             "logo_image": "images/logo.png",
             "logo_alt": "Insomnia Warriors",
@@ -369,6 +377,8 @@ def parse_friendly_markdown(raw: str) -> dict[str, Any]:
         },
         "meet_tierza": {
             **SHARED_ABOUT_IMAGES,
+            "image": seo_values["Provider image local"],
+            "image_alt": seo_values["Provider image alt"],
             "credential_tag": meet["Credential tag"],
             "heading": meet["Heading"],
             "subtitle": meet["Subtitle"],
@@ -486,7 +496,14 @@ def parse_friendly_markdown(raw: str) -> dict[str, Any]:
     data["pages"]["about"] = {
         "meta": meta_for(seo_values, "about"),
         "page_header": page_header(block),
-        "bio": {**SHARED_ABOUT_IMAGES, "credential_tag": bio["Credential tag"], "heading": bio["Heading"], "paragraphs": paragraphs_from_values(bio)},
+        "bio": {
+            **SHARED_ABOUT_IMAGES,
+            "image": seo_values["Provider image local"],
+            "image_alt": seo_values["Provider image alt"],
+            "credential_tag": bio["Credential tag"],
+            "heading": bio["Heading"],
+            "paragraphs": paragraphs_from_values(bio),
+        },
         "philosophy": {"label": philosophy["Section label"], "heading": philosophy["Heading"], "paragraphs": paragraphs_from_values(philosophy)},
         "cta": cta_block(block),
     }
@@ -588,26 +605,31 @@ def head(page_key: str, page: dict[str, Any], site: dict[str, Any]) -> str:
     meta = page["meta"]
     url = site["base_url"] if page_key == "home" else f'{site["base_url"]}{PAGE_FILES[page_key]}'
     schema = schema_for(page_key, page, site, url)
+    og_image = meta.get("og_image", site["og_image"])
+    og_image_alt = meta.get("og_image_alt", site["og_image_alt"])
+    og_image_width = meta.get("og_image_width", "1200")
+    og_image_height = meta.get("og_image_height", "630")
     return f"""<head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>{text(meta["title"])}</title>
   <meta name="description" content="{esc(meta["description"])}">
+  <meta name="robots" content="max-image-preview:large">
   <link rel="canonical" href="{esc(url)}">
   <meta property="og:title" content="{esc(meta.get("og_title", meta["title"]))}">
   <meta property="og:description" content="{esc(meta.get("og_description", meta["description"]))}">
-  <meta property="og:image" content="{esc(site["og_image"])}">
-  <meta property="og:image:width" content="1200">
-  <meta property="og:image:height" content="630">
-  <meta property="og:image:alt" content="{esc(site["og_image_alt"])}">
+  <meta property="og:image" content="{esc(og_image)}">
+  <meta property="og:image:width" content="{esc(og_image_width)}">
+  <meta property="og:image:height" content="{esc(og_image_height)}">
+  <meta property="og:image:alt" content="{esc(og_image_alt)}">
   <meta property="og:url" content="{esc(url)}">
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="{esc(site["name"])}">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="{esc(meta.get("og_title", meta["title"]))}">
   <meta name="twitter:description" content="{esc(meta.get("og_description", meta["description"]))}">
-  <meta name="twitter:image" content="{esc(site["og_image"])}">
-  <meta name="twitter:image:alt" content="{esc(site["og_image_alt"])}">
+  <meta name="twitter:image" content="{esc(og_image)}">
+  <meta name="twitter:image:alt" content="{esc(og_image_alt)}">
   <link rel="icon" type="image/png" sizes="32x32" href="images/favicons/favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="images/favicons/favicon-16x16.png">
   <link rel="icon" href="images/favicons/favicon.ico" sizes="any">
@@ -635,7 +657,7 @@ def schema_for(page_key: str, page: dict[str, Any], site: dict[str, Any], url: s
             "description": schema_descriptions["business"],
             "url": site["base_url"],
             "logo": site["logo_schema"],
-            "image": f'{site["base_url"]}images/tierza-clerc.png',
+            "image": site["provider_image"],
             "email": contact["email"],
             "telephone": contact["phone_schema"],
             "founder": {
@@ -698,24 +720,39 @@ def schema_for(page_key: str, page: dict[str, Any], site: dict[str, Any], url: s
             },
         }
     if page_key == "about":
+        person_id = f"{url}#tierza-clerc"
         return {
             "@context": "https://schema.org",
-            "@type": "Person",
-            "name": site["provider_name"],
-            "jobTitle": "Occupational Therapist & CBT-I Provider",
-            "description": schema_descriptions["about"],
-            "image": f'{site["base_url"]}images/tierza-clerc.png',
-            "url": url,
-            "worksFor": {"@type": "MedicalBusiness", "name": site["name"], "url": site["base_url"]},
-            "credential": [
-                {"@type": "EducationalOccupationalCredential", "credentialCategory": "OTR/L"},
-                {"@type": "EducationalOccupationalCredential", "credentialCategory": "CBT-I Certified"},
+            "@graph": [
+                {
+                    "@type": "ProfilePage",
+                    "@id": f"{url}#webpage",
+                    "name": page["meta"]["title"],
+                    "description": page["meta"]["description"],
+                    "url": url,
+                    "primaryImageOfPage": {"@type": "ImageObject", "url": site["provider_image"]},
+                    "mainEntity": {"@id": person_id},
+                },
+                {
+                    "@type": "Person",
+                    "@id": person_id,
+                    "name": site["provider_name"],
+                    "jobTitle": "Occupational Therapist & CBT-I Provider",
+                    "description": schema_descriptions["about"],
+                    "image": site["provider_image"],
+                    "url": url,
+                    "worksFor": {"@type": "MedicalBusiness", "name": site["name"], "url": site["base_url"]},
+                    "credential": [
+                        {"@type": "EducationalOccupationalCredential", "credentialCategory": "OTR/L"},
+                        {"@type": "EducationalOccupationalCredential", "credentialCategory": "CBT-I Certified"},
+                    ],
+                    "alumniOf": [
+                        {"@type": "CollegeOrUniversity", "name": "UW Medicine", "url": "https://www.uwmedicine.org"},
+                        {"@type": "CollegeOrUniversity", "name": "Colorado State University", "url": "https://www.colostate.edu"},
+                    ],
+                    "knowsAbout": ["Cognitive Behavioral Therapy for Insomnia", "CBT-I", "Occupational Therapy", "Chronic Insomnia", "Sleep Medicine"],
+                },
             ],
-            "alumniOf": [
-                {"@type": "CollegeOrUniversity", "name": "UW Medicine", "url": "https://www.uwmedicine.org"},
-                {"@type": "CollegeOrUniversity", "name": "Colorado State University", "url": "https://www.colostate.edu"},
-            ],
-            "knowsAbout": ["Cognitive Behavioral Therapy for Insomnia", "CBT-I", "Occupational Therapy", "Chronic Insomnia", "Sleep Medicine"],
         }
     if page_key == "testimonials":
         reviews = page["testimonials"]

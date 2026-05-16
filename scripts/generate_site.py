@@ -45,8 +45,7 @@ ICON_DEFAULTS = {
     "home.symptoms": ["&#9790;", "&#9200;", "&#9788;", "&#10067;", "&#9889;", "&#9899;"],
     "home.why_works": ["&#9998;", "&#10084;", "&#9632;", "&#9733;", "&#9829;"],
     "program.components": ["&#9998;", "&#9881;", "&#10084;"],
-    "why_cbti.cards": ["&#9650;", "&#9745;", "&#8635;", "&#9881;", "&#10024;"],
-    "why_cbti.ot_cards": ["&#9733;", "&#9881;", "&#10084;", "&#9745;", "&#10024;"],
+    "why_cbti.cards": ["&#9650;", "&#9733;", "&#9745;", "&#9881;", "&#8635;", "&#10024;"],
 }
 
 SHARED_ABOUT_IMAGES = {
@@ -202,12 +201,14 @@ def parse_friendly_markdown(raw: str) -> dict[str, Any]:
                 return match.group(2).strip()
         raise ValueError(f"Missing page: {title}")
 
-    def subsection(block: str, title: str) -> str:
-        pattern = rf"^### {re.escape(title)}\n(.*?)(?=^### |\Z)"
-        match = re.search(pattern, block, re.S | re.M)
-        if not match:
-            raise ValueError(f"Missing subsection: {title}")
-        return match.group(1).strip()
+    def subsection(block: str, title: str, *aliases: str) -> str:
+        for candidate in (title, *aliases):
+            pattern = rf"^### {re.escape(candidate)}\n(.*?)(?=^### |\Z)"
+            match = re.search(pattern, block, re.S | re.M)
+            if match:
+                return match.group(1).strip()
+        names = ", ".join((title, *aliases))
+        raise ValueError(f"Missing subsection: {names}")
 
     def bullets(block: str) -> dict[str, str]:
         values: dict[str, str] = {}
@@ -434,11 +435,8 @@ def parse_friendly_markdown(raw: str) -> dict[str, Any]:
 
     # Why CBT-I
     block = page("Why OT driven CBT-I")
-    root_cause_raw = subsection(block, "CBT-I Treats the Root Cause")
-    # The OT sub-section is embedded with a "- ### " prefix (not a real subsection)
-    ot_split = re.split(r"^- ### .+$", root_cause_raw, maxsplit=1, flags=re.M)
-    root_cause = bullets(ot_split[0])
-    why_cards = cards(root_cause, 5, "why_cbti.cards")
+    root_cause = bullets(subsection(block, "OT-driven CBT-I Treats the Whole Person", "CBT-I Treats the Root Cause"))
+    why_cards = cards(root_cause, 6, "why_cbti.cards")
     for item in why_cards:
         if ": " in item["text"] and item["text"].endswith(".") is False:
             pass
@@ -447,11 +445,17 @@ def parse_friendly_markdown(raw: str) -> dict[str, Any]:
             intro, raw_bullets = item["text"].split(": ", 1)
             item["text"] = intro + ":"
             item["bullets"] = [capitalize_first(part.strip().rstrip(".")) for part in raw_bullets.split(",")]
+    comparison_title = "OT-driven CBT-I vs. Medication Comparison"
+    comparison_block = subsection(block, "CBT-I vs. Medication Comparison", comparison_title)
+    comparison_lines = [line for line in comparison_block.splitlines() if line.startswith("| ") and "---" not in line]
+    if not comparison_lines:
+        raise ValueError(f"Missing table rows in subsection: {comparison_title}")
+    comparison_headers = [part.strip() for part in comparison_lines[0].strip("|").split("|")]
     comparison = []
-    for line in subsection(block, "CBT-I vs. Medication Comparison").splitlines():
-        if line.startswith("| ") and "---" not in line and not line.startswith("| Factor"):
-            parts = [part.strip() for part in line.strip("|").split("|")]
-            comparison.append({"factor": parts[0]})
+    for line in comparison_lines[1:]:
+        parts = [part.strip() for part in line.strip("|").split("|")]
+        if len(parts) == len(comparison_headers):
+            comparison.append({"factor": parts[0], "left": parts[1], "right": parts[2]})
     why_cbti_data: dict[str, Any] = {
         "meta": meta_for(seo_values, "why_cbti"),
         "page_header": page_header(block),
@@ -462,31 +466,15 @@ def parse_friendly_markdown(raw: str) -> dict[str, Any]:
             "cards": why_cards,
         },
         "comparison": {
-            "label": "CBT-I vs. Medication",
-            "heading": "Why Choose CBT-I Over Sleep Medication?",
-            "caption": "Comparison of CBT-I versus sleep medication across key treatment factors",
-            "column_1": "CBT-I",
-            "column_2": "Sleep Medication",
+            "label": comparison_title.removesuffix(" Comparison"),
+            "heading": f"Why Choose {comparison_headers[1]} Over {comparison_headers[2]}?",
+            "caption": f"Comparison of {comparison_headers[1]} versus {comparison_headers[2]} across key treatment factors",
+            "column_1": comparison_headers[1],
+            "column_2": comparison_headers[2],
             "rows": comparison,
         },
         "cta": cta_block(block),
     }
-    # Parse the OT-driven CBT-I sub-section if present
-    if len(ot_split) > 1:
-        ot_values = bullets(ot_split[1])
-        # Handle case-inconsistent keys (e.g. "card 3 text" vs "Card 3 text")
-        ot_values_ci = {k.lower(): v for k, v in ot_values.items()}
-        ot_cards_list = []
-        for i in range(1, 6):
-            title = ot_values_ci.get(f"card {i} title", "")
-            card_text = ot_values_ci.get(f"card {i} text", "")
-            ot_cards_list.append({"icon": ICON_DEFAULTS["why_cbti.ot_cards"][i - 1], "title": title, "text": card_text})
-        why_cbti_data["ot_diff"] = {
-            "label": ot_values_ci.get("section label", ""),
-            "heading": ot_values_ci.get("heading", ""),
-            "description": ot_values_ci.get("description", ""),
-            "cards": ot_cards_list,
-        }
     data["pages"]["why_cbti"] = why_cbti_data
 
     # About
@@ -599,6 +587,15 @@ def paragraphs(value: str) -> str:
 
 def button(item: dict[str, Any], class_name: str = "btn btn-outline") -> str:
     return f'<a href="{esc(item["url"])}" class="{class_name}">{text(item["text"])}</a>'
+
+
+def comparison_cell(value: str) -> str:
+    normalized = value.strip().lower()
+    if normalized == "yes":
+        return '<td class="check">&#10003;</td>'
+    if normalized == "no":
+        return '<td class="cross">&#10007;</td>'
+    return f"<td>{text(value)}</td>"
 
 
 def head(page_key: str, page: dict[str, Any], site: dict[str, Any]) -> str:
@@ -1081,42 +1078,17 @@ def render_why_cbti(page: dict[str, Any], site: dict[str, Any]) -> str:
           <h4><span class="icon">{item["icon"]}</span> {text(item["title"])}</h4>
           <p>{text(item["text"])}</p>{list_html}
         </div>""")
-    ot_section_html = ""
-    if "ot_diff" in page:
-        ot = page["ot_diff"]
-        ot_cards = "\n".join(
-            f"""        <div class="benefit-card">
-          <h4><span class="icon">{item["icon"]}</span> {text(item["title"])}</h4>
-          <p>{text(item["text"])}</p>
-        </div>"""
-            for item in ot["cards"]
-        )
-        ot_section_html = f"""
-
-  <!-- ====== OT-DRIVEN CBT-I ====== -->
-  <section class="section section-dark">
-    <div class="container">
-      <div class="section-header">
-        <span class="section-label">{text(ot["label"])}</span>
-        <h2>{text(ot["heading"])}</h2>
-        <p>{text(ot["description"])}</p>
-      </div>
-      <div class="benefits-grid">
-{ot_cards}
-      </div>
-    </div>
-  </section>"""
     rows = "\n".join(
         f"""            <tr>
               <td>{text(item["factor"])}</td>
-              <td class="check">&#10003;</td>
-              <td class="cross">&#10007;</td>
+              {comparison_cell(item["left"])}
+              {comparison_cell(item["right"])}
             </tr>"""
         for item in page["comparison"]["rows"]
     )
     return f"""{page_header(page["page_header"])}
 
-  <!-- ====== KEY POINT: ROOT CAUSE ====== -->
+  <!-- ====== OT-DRIVEN CBT-I ====== -->
   <section class="section">
     <div class="container">
       <div class="section-header">
@@ -1128,7 +1100,7 @@ def render_why_cbti(page: dict[str, Any], site: dict[str, Any]) -> str:
 {chr(10).join(cards)}
       </div>
     </div>
-  </section>{ot_section_html}
+  </section>
 
   <!-- ====== COMPARISON ====== -->
   <section class="section section-cream">

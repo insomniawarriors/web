@@ -67,7 +67,7 @@
 
 - Headline: Insomnia is a treatable condition
 - Subtitle: Without drugs, just behavioral therapy
-- Description: Occupational Therapy driven Cognitive Behavioral Therapy for Insomnia (OT-driven CBT-I) is a program for individuals experiencing chronic insomnia and co-occurring conditions such as anxiety, PTSD, depression, chronic pain, and other medical contributors. Insomnia Warriors provides a clinically guided pathway to restore natural sleep with the OT lens of the whole person as the focus. We provide telehealth for clients in Seattle and throughout Washington state. 
+- Description: Occupational Therapy driven Cognitive Behavioral Therapy for Insomnia (OT-driven CBT-I) is a program for individuals experiencing chronic insomnia and co-occurring conditions such as anxiety, PTSD, depression, chronic pain, and other medical contributors. OT-driven CBT-I goes beyond psychology-led CBT-I by looking beyond the brain at the whole person: routines, roles, environment, nervous-system patterns, pain, stress, daily demands, and the medical factors that can disrupt sleep. By treating all causes of insomnia, our program provides a clinically guided non-medication pathway to restore natural sleep. Insomnia Warriors provides telehealth for clients in Seattle and throughout Washington State.
 - Button 1: Schedule a Consultation [Link: contact.html]
 - Button 2: Learn About the Program [Link: program.html]
 
@@ -177,55 +177,37 @@
 
 ### Page Header
 
-- Section label: The Gold Standard
-- Heading: Why CBT-I
-- Subtitle: Industry gold standard for treating chronic insomnia.
+- Section label: Whole Person Sleep Treatment
+- Heading: Why OT-driven CBT-I
+- Subtitle: Evidence-based insomnia treatment through an occupational therapy lens.
 
-### CBT-I Treats the Root Cause
+### OT-driven CBT-I Treats the Whole Person
 
-- Section label: Evidence-Based
-- Heading: CBT-I Treats the Root Cause
-- Description: CBT-I focuses on the underlying thoughts and behaviors that keep insomnia going — rather than masking the problem with medication. It helps retrain the body's natural sleep system.
+- Section label: Beyond sleep hygiene
+- Heading: OT-driven CBT-I treats the full pattern behind insomnia
+- Description: OT-driven CBT-I combines the gold-standard behavioral treatment for chronic insomnia with an occupational therapy lens. Instead of focusing only on thoughts about sleep, it looks at the whole person: routines, roles, environment, nervous-system patterns, pain, stress, daily demands, and medical factors that can disrupt sleep.
 
-- Card 1 title: Proven to Improve Sleep
-- Card 1 text: Research shows CBT-I consistently improves: time to fall asleep, nighttime awakenings, overall sleep quality, daytime functioning.
+- Card 1 title: Evidence-Based Sleep Treatment
+- Card 1 text: CBT-I is a clinically validated treatment for chronic insomnia. It uses structured tools such as sleep scheduling, stimulus control, cognitive restructuring, relaxation techniques, and daily sleep diaries.
 
-- Card 2 title: No Side Effects
-- Card 2 text: CBT-I achieves results superior to sleep medications, with: no dependency, no tolerance buildup, no cognitive or next-day side effects.
+- Card 2 title: Whole-Person OT Lens
+- Card 2 text: Occupational Therapy (OT) focuses on how sleep fits into the full pattern of daily life, including work, caregiving, pain, stress, routines, self-care, relationships, and the environment where sleep happens.
 
-- Card 3 title: Long-Lasting Results
-- Card 3 text: Unlike medications, CBT-I teaches skills that continue to work after treatment ends. Many patients maintain or even improve their sleep over time.
+- Card 3 title: Non-Medication Pathway
+- Card 3 text: OT-driven CBT-I emphasizes non-pharmacological treatment. The focus is on behavioral, environmental, and routine-based changes that help restore natural sleep without dependency, tolerance buildup, or next-day medication effects.
 
-- Card 4 title: Structured & Practical
-- Card 4 text: CBT-I is typically delivered over 7–10 sessions and includes practical tools such as: sleep scheduling, stimulus control (retraining bed–sleep association), cognitive restructuring (reducing sleep anxiety), relaxation techniques.
+- Card 4 title: Real-Life Intervention
+- Card 4 text: Treatment is practical and contextual, including redesigning bedtime routines, modifying the sleep environment, aligning sleep with daytime activity patterns, and adapting tools to real-life demands such as work schedules, parenting, pain, or disability.
 
-- Card 5 title: Improves Overall Well-Being
-- Card 5 text: Beyond sleep, CBT-I can also improve: mood (anxiety and depression), energy and focus, quality of life.
+- Card 5 title: Long-Lasting Skills
+- Card 5 text: Instead of masking insomnia temporarily, OT-driven CBT-I teaches skills that continue after treatment ends. With adherence, many clients maintain or improve their sleep over time.
 
-- ### What makes Occupational Therapy-driven CBT-I different?
+- Card 6 title: Better Daily Function
+- Card 6 text: The goal is not only more sleep. The goal is better daytime function, including more energy, clearer focus, steadier mood, and a higher quality of life.
 
-- Section Label: Whole person focus
-- Heading: What makes OT-driven CBT-I different
-- Description: The field of Occupational Therapy (OT) focuses on all aspects of someone's life. CBT-I in psychiatric settings may include medication management alongside therapy. OT-driven CBT-I emphasizes non-pharmacological, behavior-based treatment.
+### OT-driven CBT-I vs. Medication Comparison
 
-- Card 1 title: Core Focus
-- Card 1 text: Centers on daily life structure and function: how sleep fits into routines, roles, environments. Insomnia is treated as a disruption in occupations (sleep, work, self-care, leisure). Emphasizes rebuilding sustainable habits and rhythms.
-
-- Card 2 title: Intervention Style
-- Card 2 text: Highly contextual and hands-on: redesigning bedtime routines, modifying the sleep environment, aligning sleep with daytime activity patterns, behavioral tools that are tied to real-life performance (work schedules or caregiving demands).
-
-- Card 3 title: View of the Patient
-- card 3 text: Sees you as a whole system interacting with your environment. Your provider puts a strong emphasis on your life's functions, independence, and quality of life. Tailors your therapy to real-world barriers (shift work, parenting, or disabilities)
-
-- Card 4 title: Use of Medication
-- Card 4 text: Non-pharmacological. The focus is on behavioral and environmental changes, allowing you to directly control your sleep, not be dependent on medications to achieve restful and restorative sleep.
-
-- Card 5 title: Session Experience
-- Card 5 text: Feels more like coaching and lifestyle redesign while still being clinical therapy. This includes: activity logs beyond merely sleep (food consumption, naps, medications, caffeine intake), habit training and environmental adjustments, collaborative function-oriented sessions with your provider. 
-
-### CBT-I vs. Medication Comparison
-
-| Factor | CBT-I | Sleep Medication |
+| Factor | OT-driven CBT-I | Sleep Medication |
 |---|---|---|
 | Treats root cause | Yes | No |
 | Long-term results | Yes | No |

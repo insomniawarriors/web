@@ -67,7 +67,11 @@
 
 - Headline: Insomnia is a treatable condition
 - Subtitle: Without drugs, just behavioral therapy
-- Description: Occupational Therapy driven Cognitive Behavioral Therapy for Insomnia (OT-driven CBT-I) is a program for individuals experiencing chronic insomnia and co-occurring conditions such as anxiety, PTSD, depression, chronic pain, and other medical contributors. OT-driven CBT-I goes beyond psychology-led CBT-I by looking beyond the brain at the whole person: routines, roles, environment, nervous-system patterns, pain, stress, daily demands, and the medical factors that can disrupt sleep. By treating all causes of insomnia, our program provides a clinically guided non-medication pathway to restore natural sleep. Insomnia Warriors provides telehealth for clients in Seattle and throughout Washington State.
+- Description: Occupational Therapy driven Cognitive Behavioral Therapy for Insomnia (OT-driven CBT-I) is a program for individuals experiencing chronic insomnia and co-occurring conditions such as anxiety, PTSD, depression, chronic pain, and other medical contributors.
+
+  OT-driven CBT-I goes beyond psychology-led CBT-I by looking beyond the brain at the whole person: routines, roles, environment, nervous-system patterns, pain, stress, daily demands, and the medical factors that can disrupt sleep.
+
+  By treating all causes of insomnia, our program provides a clinically guided non-medication pathway to restore natural sleep. Insomnia Warriors provides telehealth for clients in Seattle and throughout Washington State.
 - Button 1: Schedule a Consultation [Link: contact.html]
 - Button 2: Learn About the Program [Link: program.html]
 

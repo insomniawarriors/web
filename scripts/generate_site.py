@@ -212,14 +212,34 @@ def parse_friendly_markdown(raw: str) -> dict[str, Any]:
 
     def bullets(block: str) -> dict[str, str]:
         values: dict[str, str] = {}
+        current_key: str | None = None
+        continuation: list[str] = []
+
+        def flush_continuation() -> None:
+            nonlocal continuation
+            continuation_text = "\n".join(continuation).strip()
+            if current_key and continuation_text:
+                values[current_key] = values[current_key].rstrip() + "\n\n" + continuation_text
+            continuation = []
+
         for line in block.splitlines():
-            line = line.strip()
-            if not line.startswith("- "):
+            stripped = line.strip()
+            if stripped.startswith("- "):
+                flush_continuation()
+                body = stripped[2:]
+                if ":" in body:
+                    key, value = body.split(":", 1)
+                    current_key = key.strip()
+                    values[current_key] = value.strip()
+                else:
+                    current_key = None
                 continue
-            body = line[2:]
-            if ":" in body:
-                key, value = body.split(":", 1)
-                values[key.strip()] = value.strip()
+            if current_key and (line.startswith("  ") or not stripped):
+                continuation.append(stripped)
+                continue
+            flush_continuation()
+            current_key = None
+        flush_continuation()
         return values
 
     def button_value(value: str) -> dict[str, str]:
@@ -589,6 +609,10 @@ def button(item: dict[str, Any], class_name: str = "btn btn-outline") -> str:
     return f'<a href="{esc(item["url"])}" class="{class_name}">{text(item["text"])}</a>'
 
 
+def paragraph_block_with_class(value: str, class_name: str, indent: str = "        ") -> str:
+    return "\n".join(f'{indent}<p class="{class_name}">{text(part.strip())}</p>' for part in value.split("\n\n") if part.strip())
+
+
 def comparison_cell(value: str) -> str:
     normalized = value.strip().lower()
     if normalized == "yes":
@@ -902,6 +926,7 @@ def about_block(section: dict[str, Any], cream: bool = False) -> str:
 
 def render_home(page: dict[str, Any], site: dict[str, Any]) -> str:
     hero = page["hero"]
+    hero_description = paragraph_block_with_class(hero["description"], "hero-copy")
     about = page["meet_tierza"]
     symptoms = "\n".join(
         f"""        <div class="symptom-card">
@@ -930,7 +955,7 @@ def render_home(page: dict[str, Any], site: dict[str, Any]) -> str:
       <div class="hero-content">
         <h1>{text(hero["headline"])}</h1>
         <h3 class="hero-subtitle">{text(hero["subtitle"])}</h3>
-        <p class="hero-copy">{text(hero["description"])}</p>
+{hero_description}
         <div class="hero-actions">
           {button(hero["primary_button"])}
           {button(hero["secondary_button"])}

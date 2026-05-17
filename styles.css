@@ -375,12 +375,16 @@ p:not(.subtitle) {
 
 .hero-copy {
   color: var(--black);
-  margin-bottom: 28px;
+  margin-bottom: 14px;
   font-size: 1.1rem;
   font-weight: 400;
   line-height: 1.8;
   text-align: justify;
   text-align-last: left;
+}
+
+.hero-copy:last-of-type {
+  margin-bottom: 28px;
 }
 
 .hero-actions {

@@ -38,12 +38,12 @@
 - Provider image width: 1092
 - Provider image height: 1441
 - Schema logo: https://www.insomniawarriors.com/images/logo-wide.png
-- Business schema description: OT-driven CBT-I (Occupational Therapy driven Cognitive Behavioral Therapy for Insomnia) treatment program for chronic insomnia. Led by Tierza Clerc, OTR/L, CBT-I, the first OT credentialed in CBT-I in Washington State with 26 years of clinical experience.
-- Provider schema description: 26 years of clinical experience in occupational therapy and medical massage. CBT-I certified.
+- Business schema description: OT-driven CBT-I (Occupational Therapy driven Cognitive Behavioral Therapy for Insomnia) treatment program for chronic insomnia. Led by Tierza Clerc, OTR/L, CBT-I, the first OT trained in CBT-I in Washington State with 26 years of clinical experience.
+- Provider schema description: 26 years of clinical experience in occupational therapy and medical massage. CBT-I trained.
 - Program schema description: A clinically grounded OT-driven CBT-I treatment program for chronic insomnia. Includes clinical assessment, sleep diaries, personalized treatment plans, weekly sessions, and co-occurring condition integration.
 - Program study description: CBT-I has a 95% success rate among individuals who adhere to and complete the program.
 - OT-driven CBT-I schema description: An evidence-based therapy that treats the root cause of insomnia through sleep scheduling, stimulus control, cognitive restructuring, and relaxation techniques. Unlike sleep medication, OT-driven CBT-I produces long-lasting results with no side effects or dependency risk.
-- About schema description: Tierza Clerc has been in the medical field for 26 years in occupational therapy and medical massage. She is OTR/L and CBT-I certified and dedicated to helping people reclaim restful sleep.
+- About schema description: Tierza Clerc has been in the medical field for 26 years in occupational therapy and medical massage. She is OTR/L and CBT-I trained and dedicated to helping people reclaim restful sleep.
 - Home title: Insomnia Warriors — Clinical OT-driven CBT-I Program for Chronic Insomnia
 - Home description: Insomnia Warriors delivers a clinically grounded OT-driven CBT-I program to help you reclaim restful sleep. Led by Tierza Clerc, OTR/L, CBT-I — 26 years of clinical experience.
 - Program title: The Program — Insomnia Warriors
@@ -51,7 +51,7 @@
 - Why CBT-I title: Why CBT-I — Insomnia Warriors
 - Why CBT-I description: CBT-I is the gold standard treatment for chronic insomnia. Learn why it works better than medication — with lasting results and no side effects.
 - About title: Meet Tierza Clerc — Insomnia Warriors
-- About description: Meet Tierza Clerc, OTR/L, CBT-I — the first OT credentialed in CBT-I in Washington State with 26 years of clinical experience. She has walked the same path to better sleep.
+- About description: Meet Tierza Clerc, OTR/L, CBT-I — the first OT trained in CBT-I in Washington State with 26 years of clinical experience. She has walked the same path to better sleep.
 - Testimonials title: Testimonials — Insomnia Warriors
 - Testimonials description: Real cases, measurable improvement, restored sleep. Read what clients say about their OT-driven CBT-I treatment experience with Insomnia Warriors.
 - FAQs title: FAQs — Insomnia Warriors
@@ -77,11 +77,11 @@
 
 ### Meet Tierza (preview)
 
-- Credential tag: OTR/L · CBT-I Certified
+- Credential tag: OTR/L · CBT-I Trained
 - Credential logos: UW Medicine [Link: https://www.uwmedicine.org], Colorado State University [Link: https://www.colostate.edu]
 - Heading: Meet Tierza Clerc
 - Subtitle: A therapist who has walked the same path to better sleep
-- Bio: With 26 years of clinical experience, Tierza combines an occupational therapy lens, evidence-based CBT-I, and a compassionate, human-centered approach. She has personally experienced the program's life-changing results — and is dedicated to helping others do the same. She is the first Occupational Therapist credentialed in CBT-I in the state of Washington.
+- Bio: With 26 years of clinical experience, Tierza combines an occupational therapy lens, evidence-based CBT-I, and a compassionate, human-centered approach. She has personally experienced the program's life-changing results — and is dedicated to helping others do the same. She is the first Occupational Therapist trained in CBT-I in the state of Washington.
 - Button: Learn More About Tierza [Link: about.html]
 
 ### Stat Bar
@@ -237,10 +237,10 @@
 
 ### Bio
 
-- Credential tag: OTR/L · CBT-I Certified
+- Credential tag: OTR/L · CBT-I Trained
 - Credential logos: UW Medicine [Link: https://www.uwmedicine.org], Colorado State University [Link: https://www.colostate.edu]
 - Heading: 26 Years of Clinical Experience
-- Paragraph 1: Tierza Clerc has been in the medical field for 26 years — initially in medical massage for 23 years, helping people after surgeries, injuries, or trauma, and now 3 years in occupational therapy. She is the first Occupational Therapist to be credentialed in CBT-I in the state of Washington.
+- Paragraph 1: Tierza Clerc has been in the medical field for 26 years — initially in medical massage for 23 years, helping people after surgeries, injuries, or trauma, and now 3 years in occupational therapy. She is the first Occupational Therapist to be Trained in CBT-I by Colorado State University in the state of Washington.
 - Paragraph 2: Upon taking the OT-driven CBT-I program as a practitioner, Tierza experienced an evidence-based, occupational therapy-driven intervention for chronic insomnia which led to managing her own insomnia towards significantly better sleep.
 - Paragraph 3: The program uses Cognitive Behavioral Therapy for Insomnia (CBT-I) to improve sleep quality and daily functioning. Occupational therapy as a profession is perfectly positioned to help in the occupation of sleep.
 - Paragraph 4: She is dedicated to sharing this program so others can reclaim restful sleep and a higher quality of life.
